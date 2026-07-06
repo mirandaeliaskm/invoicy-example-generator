@@ -81,7 +81,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"useCaseId\": \"NFE_VENDA_SIMPLES_NACIONAL\",\n  \"outputFormats\": [\n    \"XML\",\n    \"JSON\",\n    \"README\"\n  ],\n  \"overrides\": {\n    \"document.ide.numero\": \"12345\"\n  }\n}"
+          "raw": "{\n  \"useCaseId\": \"NFE_VENDA_SIMPLES_NACIONAL\",\n  \"outputFormats\": [\n    \"XML\",\n    \"JSON\",\n    \"README\"\n  ],\n  \"overrides\": {\n    \"document.emitente.razaoSocial\": \"EMPRESA EXEMPLO LTDA\"\n  }\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/v1/examples/generate",
@@ -98,6 +98,55 @@
           ]
         }
       }
+    },
+    {
+      "name": "Sequence - Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/sequence/status",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "sequence",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sequence - Configure Next Number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nextNoteNumber\": 11\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/sequence/configure-next",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "sequence",
+            "configure-next"
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }

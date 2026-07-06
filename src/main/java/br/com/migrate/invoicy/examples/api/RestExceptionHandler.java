@@ -32,6 +32,12 @@ public class RestExceptionHandler {
                 ));
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleIllegalArgument(IllegalArgumentException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorResponse(OffsetDateTime.now(), exception.getMessage(), List.of()));
+    }
+
     @ExceptionHandler({MethodArgumentNotValidException.class, ConstraintViolationException.class})
     public ResponseEntity<ErrorResponse> handleValidation(Exception exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)

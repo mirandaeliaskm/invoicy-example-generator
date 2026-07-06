@@ -142,11 +142,12 @@ Content-Type: application/json
   "useCaseId": "NFE_VENDA_SIMPLES_NACIONAL",
   "outputFormats": ["XML", "JSON", "README"],
   "overrides": {
-    "document.ide.numero": "12345",
     "document.emitente.razaoSocial": "EMPRESA EXEMPLO LTDA"
   }
 }
 ```
+
+> A partir da versão 0.2.3, o campo `document.ide.numero` é controlado automaticamente por sequência global. Mesmo que seja enviado em `overrides`, o valor final gerado pelo motor será o próximo número disponível.
 
 ### Baixar pacote ZIP
 
@@ -156,6 +157,50 @@ Content-Type: application/json
 ```
 
 Corpo igual ao endpoint de geração.
+
+
+## Sequência automática de número e emissão
+
+A aplicação mantém uma sequência global para todos os use cases de NF-e. Isso significa que, se o último exemplo gerado saiu com `nNF = 10`, o próximo exemplo sairá com `nNF = 11`, mesmo que o novo exemplo seja de outro use case.
+
+A data/hora de emissão (`dhEmi`) também é definida automaticamente em `America/Sao_Paulo`. Se duas gerações ocorrerem no mesmo segundo, a aplicação incrementa a próxima emissão em 1 segundo para manter a ordem temporal.
+
+O estado da sequência fica salvo em:
+
+```text
+data/generator-sequence.properties
+```
+
+Configuração padrão em `application.yml`:
+
+```yaml
+invoicy:
+  examples:
+    sequence:
+      state-file: data/generator-sequence.properties
+      initial-note-number: 1
+```
+
+Para consultar o último número gerado:
+
+```http
+GET /api/v1/sequence/status
+```
+
+Para informar que o próximo exemplo deve começar em um número específico, por exemplo `11`:
+
+```http
+POST /api/v1/sequence/configure-next
+Content-Type: application/json
+
+{
+  "nextNoteNumber": 11
+}
+```
+
+Esse endpoint grava internamente `lastNoteNumber = 10`, então a próxima geração usará `nNF = 11`.
+
+Para reiniciar a sequência manualmente em ambiente local, pare a aplicação e edite ou remova o arquivo `data/generator-sequence.properties`. Em uso real de homologação, evite apagar esse arquivo para não repetir `nNF`.
 
 ## Estrutura
 
@@ -220,3 +265,12 @@ A partir da versão 0.2.2, o gerador aplica automaticamente saneamentos para hom
 - grupo `pag/pagItem` gerado conforme o Layout de Envio InvoiCy.
 
 Os XSDs anexados foram mantidos em `src/main/resources/xsd/invoicy` como referência de contrato do Layout de Envio. O erro `TISTot` não pertence ao Layout de Envio InvoiCy; ele ocorre no XML nacional NF-e após a conversão interna.
+
+
+## Correção 0.2.3 - Sequência global
+
+- Adicionado controle persistente de sequência global de `nNF`.
+- `nNF` passa a ser gerado automaticamente para todos os use cases.
+- `dhEmi` passa a ser gerado junto da sequência e incrementado em pelo menos 1 segundo quando necessário.
+- Adicionado endpoint `GET /api/v1/sequence/status`.
+- O arquivo `data/generator-sequence.properties` foi incluído no `.gitignore`.

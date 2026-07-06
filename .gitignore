@@ -5,3 +5,5 @@ target/
 *.log
 generated-examples/
 .DS_Store
+
+data/

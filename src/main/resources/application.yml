@@ -19,6 +19,9 @@ invoicy:
   examples:
     catalog: catalog/nfe-use-cases.yml
     generated-package-prefix: invoicy-example
+    sequence:
+      state-file: data/generator-sequence.properties
+      initial-note-number: 1
 
 springdoc:
   swagger-ui:
