@@ -39,6 +39,11 @@ class GenerateExampleSmokeTest {
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("<Envio>")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("<ModeloDocumento>NFe</ModeloDocumento>")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("<nNF>9999</nNF>")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("<xNome_dest>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_dest>")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("<CNPJ_dest>11444777000161</CNPJ_dest>")))
+                .andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("<IE_dest>"))))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("<pagItem>")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("<tPag>01</tPag>")))
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("\\\"nNF\\\": \\\"9999\\\"")));
     }
 }

@@ -72,7 +72,7 @@
     <#if document.destinatario.cpf??><CPF_dest>${document.destinatario.cpf}</CPF_dest></#if>
     <#if document.destinatario.idEstrangeiro??><idEstrangeiro>${document.destinatario.idEstrangeiro}</idEstrangeiro></#if>
     <xNome_dest>${document.destinatario.razaoSocial}</xNome_dest>
-    <#if document.destinatario.inscricaoEstadual??><IE_dest>${document.destinatario.inscricaoEstadual}</IE_dest></#if>
+    <#if document.destinatario.inscricaoEstadual?? && document.destinatario.inscricaoEstadual?has_content><IE_dest>${document.destinatario.inscricaoEstadual}</IE_dest></#if>
     <indIEDest>${document.destinatario.indicadorIE}</indIEDest>
     <#if document.destinatario.inscricaoMunicipal??><IM_dest>${document.destinatario.inscricaoMunicipal}</IM_dest></#if>
     <enderDest>
@@ -196,10 +196,10 @@
   </transp>
 
   <pag>
-    <#if document.pagamento?? && document.pagamento.indicadorFormaPagamento??><indPag_pag>${document.pagamento.indicadorFormaPagamento}</indPag_pag></#if>
     <#if document.pagamento?? && document.pagamento.itens?? && document.pagamento.itens?size gt 0>
     <#list document.pagamento.itens as pagamento>
     <pagItem>
+      <#if document.pagamento.indicadorFormaPagamento??><indPag_pag>${document.pagamento.indicadorFormaPagamento}</indPag_pag></#if>
       <tPag>${pagamento.tipoPagamento!"01"}</tPag>
       <#if pagamento.descricao??><xPag>${pagamento.descricao}</xPag></#if>
       <vPag>${(pagamento.valor!document.totais.valorNota)?string["0.00"]}</vPag>
@@ -210,6 +210,7 @@
     </#list>
     <#else>
     <pagItem>
+      <#if document.pagamento?? && document.pagamento.indicadorFormaPagamento??><indPag_pag>${document.pagamento.indicadorFormaPagamento}</indPag_pag></#if>
       <tPag>01</tPag>
       <vPag>${document.totais.valorNota?string["0.00"]}</vPag>
     </pagItem>

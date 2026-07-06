@@ -8,7 +8,7 @@ document:
     modelo: '55'
     serie: '1'
     numero: '2001'
-    dataEmissao: '2026-01-15T10:30:00-03:00'
+    dataEmissao: NOW
     tipoOperacao: '1'
     identificadorDestino: '1'
     codigoMunicipioFatoGerador: '4310207'
@@ -36,10 +36,9 @@ document:
       codigoPais: '1058'
       pais: Brasil
   destinatario:
-    cnpj: '88888888000172'
-    razaoSocial: CLIENTE EXEMPLO LTDA
-    indicadorIE: '1'
-    inscricaoEstadual: '2243658793'
+    cnpj: '11444777000161'
+    razaoSocial: NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL
+    indicadorIE: '9'
     endereco:
       logradouro: Avenida Cliente
       numero: '200'

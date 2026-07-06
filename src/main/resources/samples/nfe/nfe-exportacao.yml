@@ -8,7 +8,7 @@ document:
     modelo: '55'
     serie: '1'
     numero: '4001'
-    dataEmissao: '2026-01-15T10:30:00-03:00'
+    dataEmissao: NOW
     tipoOperacao: '1'
     identificadorDestino: '3'
     codigoMunicipioFatoGerador: '4310207'

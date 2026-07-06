@@ -8,7 +8,7 @@ document:
     modelo: '55'
     serie: '1'
     numero: '3001'
-    dataEmissao: '2026-01-15T10:30:00-03:00'
+    dataEmissao: NOW
     tipoOperacao: '0'
     identificadorDestino: '1'
     codigoMunicipioFatoGerador: '4310207'
@@ -38,10 +38,9 @@ document:
       codigoPais: '1058'
       pais: Brasil
   destinatario:
-    cnpj: '88888888000172'
+    cnpj: '11444777000161'
     razaoSocial: FORNECEDOR EXEMPLO LTDA
-    indicadorIE: '1'
-    inscricaoEstadual: '2243658793'
+    indicadorIE: '9'
     endereco:
       logradouro: Avenida Fornecedor
       numero: '500'

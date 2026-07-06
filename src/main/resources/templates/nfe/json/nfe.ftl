@@ -50,6 +50,7 @@
       <#if document.destinatario.cpf??>"CPF_dest": "${document.destinatario.cpf}",</#if>
       <#if document.destinatario.idEstrangeiro??>"idEstrangeiro": "${document.destinatario.idEstrangeiro}",</#if>
       "xNome_dest": "${document.destinatario.razaoSocial}",
+      <#if document.destinatario.inscricaoEstadual?? && document.destinatario.inscricaoEstadual?has_content>"IE_dest": "${document.destinatario.inscricaoEstadual}",</#if>
       "indIEDest": "${document.destinatario.indicadorIE}",
       "enderDest": {
         "nro_dest": "${document.destinatario.endereco.numero}",
@@ -147,11 +148,11 @@
       "modFrete": "${document.transporte.modalidadeFrete}"
     },
     "pag": {
-      <#if document.pagamento?? && document.pagamento.indicadorFormaPagamento??>"indPag_pag": "${document.pagamento.indicadorFormaPagamento}",</#if>
       "pagItem": [
         <#if document.pagamento?? && document.pagamento.itens?? && document.pagamento.itens?size gt 0>
         <#list document.pagamento.itens as pagamento>
         {
+          <#if document.pagamento.indicadorFormaPagamento??>"indPag_pag": "${document.pagamento.indicadorFormaPagamento}",</#if>
           "tPag": "${pagamento.tipoPagamento!"01"}"<#if pagamento.descricao??>,
           "xPag": "${pagamento.descricao}"</#if>,
           "vPag": ${(pagamento.valor!document.totais.valorNota)?string["0.00"]}<#if pagamento.dataPagamento??>,
@@ -162,6 +163,7 @@
         </#list>
         <#else>
         {
+          <#if document.pagamento?? && document.pagamento.indicadorFormaPagamento??>"indPag_pag": "${document.pagamento.indicadorFormaPagamento}",</#if>
           "tPag": "01",
           "vPag": ${document.totais.valorNota?string["0.00"]}
         }

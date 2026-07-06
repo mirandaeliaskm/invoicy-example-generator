@@ -207,3 +207,16 @@ Este projeto entrega um núcleo funcional e extensível para onboarding. Os exem
 - Incluído suporte ao grupo `pag/pagItem` do Layout de Envio InvoiCy.
 - Ajustados samples para gerar `tPag` e `vPag`, evitando que o XML nacional seja montado com `<pag/>` vazio.
 - Adicionado `docs/troubleshooting-sefaz.md` com diagnóstico para erro de schema `TISTot`.
+
+
+## Ajustes de homologação SEFAZ
+
+A partir da versão 0.2.2, o gerador aplica automaticamente saneamentos para homologação NF-e:
+
+- `dhEmi` dinâmico usando `America/Sao_Paulo`;
+- razão social do destinatário em homologação como `NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL`;
+- validação/saneamento de CNPJ do destinatário;
+- omissão de `IE_dest` quando `indIEDest=9`;
+- grupo `pag/pagItem` gerado conforme o Layout de Envio InvoiCy.
+
+Os XSDs anexados foram mantidos em `src/main/resources/xsd/invoicy` como referência de contrato do Layout de Envio. O erro `TISTot` não pertence ao Layout de Envio InvoiCy; ele ocorre no XML nacional NF-e após a conversão interna.
