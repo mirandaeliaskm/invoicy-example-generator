@@ -1,0 +1,17 @@
+id: NFE_EXPORTACAO
+description: Regras mínimas para NF-e de exportação.
+rules:
+  - id: NFE_EXP_001
+    path: document.ide.identificadorDestino
+    required: true
+    fixedValue: "3"
+    message: Exportação deve usar identificador de destino 3 - exterior.
+  - id: NFE_EXP_002
+    path: document.destinatario.idEstrangeiro
+    required: true
+    message: Destinatário estrangeiro deve informar identificação estrangeira quando aplicável.
+  - id: NFE_EXP_003
+    path: document.itens[*].produto.cfop
+    required: true
+    allowedValues: ["7101", "7102"]
+    message: Exemplo de exportação deve usar CFOP iniciado por 7 compatível com o cenário.

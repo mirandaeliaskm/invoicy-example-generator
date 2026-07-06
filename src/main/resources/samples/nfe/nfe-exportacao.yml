@@ -1,0 +1,76 @@
+document:
+  identificador: NFE_EXPORTACAO
+  layoutVersion: "4.00"
+  ide:
+    codigoUF: "43"
+    naturezaOperacao: Exportação de mercadoria
+    modelo: "55"
+    serie: "1"
+    numero: "4001"
+    dataEmissao: "2026-01-15T10:30:00-03:00"
+    tipoOperacao: "1"
+    identificadorDestino: "3"
+    codigoMunicipioFatoGerador: "4310207"
+    tipoAmbiente: "2"
+    finalidade: "1"
+    consumidorFinal: "0"
+    indicadorPresenca: "9"
+  emitente:
+    cnpj: "99999999000191"
+    razaoSocial: EMPRESA EXPORTADORA EXEMPLO LTDA
+    nomeFantasia: EXPORTADORA EXEMPLO
+    inscricaoEstadual: "2243658792"
+    crt: "3"
+    endereco:
+      logradouro: Rua Exemplo
+      numero: "100"
+      bairro: Centro
+      codigoMunicipio: "4310207"
+      municipio: Ijui
+      uf: RS
+      cep: "98700000"
+      codigoPais: "1058"
+      pais: Brasil
+  destinatario:
+    idEstrangeiro: FOREIGN-CUSTOMER-001
+    razaoSocial: FOREIGN CUSTOMER LLC
+    indicadorIE: "9"
+    endereco:
+      logradouro: 100 Example Avenue
+      numero: "100"
+      bairro: Downtown
+      codigoMunicipio: "9999999"
+      municipio: Exterior
+      uf: EX
+      cep: "00000000"
+      codigoPais: "2496"
+      pais: Estados Unidos
+  itens:
+    - numero: 1
+      produto:
+        codigo: EXP001
+        ean: SEM GTIN
+        descricao: Produto destinado à exportação
+        ncm: "94036000"
+        cfop: "7102"
+        unidade: UN
+        quantidade: 10.0000
+        valorUnitario: 100.00
+        valorProduto: 1000.00
+      impostos:
+        icms:
+          origem: "0"
+          cst: "41"
+          modalidadeBaseCalculo: "3"
+          baseCalculo: 0.00
+          aliquota: 0.00
+          valor: 0.00
+  totais:
+    frete: 0.00
+    seguro: 0.00
+    desconto: 0.00
+    outrasDespesas: 0.00
+  transporte:
+    modalidadeFrete: "9"
+  informacoesAdicionais:
+    complementares: Exemplo fictício de operação de exportação para onboarding técnico.

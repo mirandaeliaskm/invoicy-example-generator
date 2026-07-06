@@ -1,0 +1,43 @@
+id: NFE_COMMON
+description: Regras comuns mínimas para exemplos de NF-e modelo 55.
+rules:
+  - id: NFE_COMMON_001
+    path: document.ide.modelo
+    required: true
+    fixedValue: "55"
+    message: NF-e deve usar modelo 55.
+  - id: NFE_COMMON_002
+    path: document.ide.tipoAmbiente
+    required: true
+    allowedValues: ["1", "2"]
+    message: Ambiente deve ser 1 produção ou 2 homologação.
+  - id: NFE_COMMON_003
+    path: document.ide.finalidade
+    required: true
+    allowedValues: ["1", "2", "3", "4"]
+    message: Finalidade da NF-e inválida.
+  - id: NFE_COMMON_004
+    path: document.emitente.cnpj
+    required: true
+    message: CNPJ do emitente é obrigatório.
+  - id: NFE_COMMON_005
+    path: document.destinatario.razaoSocial
+    required: true
+    message: Razão social/nome do destinatário é obrigatório.
+  - id: NFE_COMMON_006
+    path: document.itens[*].produto.codigo
+    required: true
+    message: Código do produto é obrigatório em todos os itens.
+  - id: NFE_COMMON_007
+    path: document.itens[*].produto.ncm
+    required: true
+    message: NCM é obrigatório em todos os itens.
+  - id: NFE_COMMON_008
+    path: document.itens[*].produto.cfop
+    required: true
+    message: CFOP é obrigatório em todos os itens.
+  - id: NFE_COMMON_009
+    path: document.totais.valorNota
+    required: true
+    greaterThanZero: true
+    message: Valor total da NF-e deve ser maior que zero.

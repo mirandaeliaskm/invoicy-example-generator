@@ -1,0 +1,12 @@
+id: NFE_DEVOLUCAO
+description: Regras mínimas para NF-e de devolução.
+rules:
+  - id: NFE_DEV_001
+    path: document.ide.finalidade
+    required: true
+    fixedValue: "4"
+    message: Devolução deve usar finalidade 4.
+  - id: NFE_DEV_002
+    path: document.documentosReferenciados[*].chaveNFe
+    required: true
+    message: NF-e de devolução deve referenciar documento fiscal de origem.

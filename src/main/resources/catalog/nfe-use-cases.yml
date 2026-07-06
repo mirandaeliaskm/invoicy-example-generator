@@ -1,0 +1,91 @@
+useCases:
+  - id: NFE_VENDA_SIMPLES_NACIONAL
+    module: NFE
+    name: NF-e de venda - Simples Nacional
+    description: Exemplo de NF-e modelo 55 para venda interna de mercadoria por empresa do Simples Nacional, usando CSOSN.
+    model: "55"
+    layoutVersion: "4.00"
+    outputs: [XML, JSON, README]
+    tags: [nfe, venda, simples-nacional, csosn, onboarding]
+    template:
+      xml: templates/nfe/xml/nfe.ftl
+      json: templates/nfe/json/nfe.ftl
+      readme: templates/nfe/readme/nfe.md.ftl
+    sampleData: samples/nfe/nfe-venda-simples-nacional.yml
+    ruleSets:
+      - rules/nfe/common.yml
+      - rules/nfe/venda.yml
+      - rules/nfe/simples-nacional.yml
+
+  - id: NFE_VENDA_REGIME_NORMAL
+    module: NFE
+    name: NF-e de venda - Regime Normal
+    description: Exemplo de NF-e modelo 55 para venda interna de mercadoria por empresa do Regime Normal, usando CST 00.
+    model: "55"
+    layoutVersion: "4.00"
+    outputs: [XML, JSON, README]
+    tags: [nfe, venda, regime-normal, cst, icms, onboarding]
+    template:
+      xml: templates/nfe/xml/nfe.ftl
+      json: templates/nfe/json/nfe.ftl
+      readme: templates/nfe/readme/nfe.md.ftl
+    sampleData: samples/nfe/nfe-venda-regime-normal.yml
+    ruleSets:
+      - rules/nfe/common.yml
+      - rules/nfe/venda.yml
+      - rules/nfe/regime-normal.yml
+
+  - id: NFE_DEVOLUCAO_MERCADORIA
+    module: NFE
+    name: NF-e de devolução de mercadoria
+    description: Exemplo de NF-e de devolução com documento fiscal referenciado.
+    model: "55"
+    layoutVersion: "4.00"
+    outputs: [XML, JSON, README]
+    tags: [nfe, devolucao, documento-referenciado, onboarding]
+    template:
+      xml: templates/nfe/xml/nfe.ftl
+      json: templates/nfe/json/nfe.ftl
+      readme: templates/nfe/readme/nfe.md.ftl
+    sampleData: samples/nfe/nfe-devolucao-mercadoria.yml
+    ruleSets:
+      - rules/nfe/common.yml
+      - rules/nfe/devolucao.yml
+      - rules/nfe/regime-normal.yml
+
+  - id: NFE_EXPORTACAO
+    module: NFE
+    name: NF-e de exportação
+    description: Exemplo de NF-e de exportação com destinatário estrangeiro e CFOP iniciado por 7.
+    model: "55"
+    layoutVersion: "4.00"
+    outputs: [XML, JSON, README]
+    tags: [nfe, exportacao, exterior, onboarding]
+    template:
+      xml: templates/nfe/xml/nfe.ftl
+      json: templates/nfe/json/nfe.ftl
+      readme: templates/nfe/readme/nfe.md.ftl
+    sampleData: samples/nfe/nfe-exportacao.yml
+    ruleSets:
+      - rules/nfe/common.yml
+      - rules/nfe/exportacao.yml
+      - rules/nfe/regime-normal.yml
+
+  - id: NFE_COM_ST_IPI
+    module: NFE
+    name: NF-e com ICMS-ST e IPI
+    description: Exemplo de NF-e com valores de substituição tributária e IPI compondo o total da nota.
+    model: "55"
+    layoutVersion: "4.00"
+    outputs: [XML, JSON, README]
+    tags: [nfe, icms-st, ipi, regime-normal, onboarding]
+    template:
+      xml: templates/nfe/xml/nfe.ftl
+      json: templates/nfe/json/nfe.ftl
+      readme: templates/nfe/readme/nfe.md.ftl
+    sampleData: samples/nfe/nfe-com-st-ipi.yml
+    ruleSets:
+      - rules/nfe/common.yml
+      - rules/nfe/venda.yml
+      - rules/nfe/regime-normal.yml
+      - rules/nfe/st-ipi.yml

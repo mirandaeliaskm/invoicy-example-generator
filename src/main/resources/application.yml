@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: invoicy-example-generator
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      indent-output: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+invoicy:
+  examples:
+    catalog: catalog/nfe-use-cases.yml
+    generated-package-prefix: invoicy-example
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

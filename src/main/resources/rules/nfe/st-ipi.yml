@@ -1,0 +1,13 @@
+id: NFE_ST_IPI
+description: Regras mínimas para exemplo com ICMS-ST e IPI.
+rules:
+  - id: NFE_ST_IPI_001
+    path: document.itens[*].impostos.icmsSt.valorICMSST
+    required: true
+    greaterThanZero: true
+    message: Exemplo com ST deve possuir valor de ICMS-ST maior que zero.
+  - id: NFE_ST_IPI_002
+    path: document.itens[*].impostos.ipi.valorIpi
+    required: true
+    greaterThanZero: true
+    message: Exemplo com IPI deve possuir valor de IPI maior que zero.

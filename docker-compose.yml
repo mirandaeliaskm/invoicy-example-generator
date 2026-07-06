@@ -1,0 +1,8 @@
+services:
+  invoicy-example-generator:
+    build: .
+    container_name: invoicy-example-generator
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: local

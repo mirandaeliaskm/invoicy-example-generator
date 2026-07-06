@@ -1,0 +1,12 @@
+id: NFE_REGIME_NORMAL
+description: Regras mínimas para emitente do regime normal.
+rules:
+  - id: NFE_RN_001
+    path: document.emitente.crt
+    required: true
+    allowedValues: ["2", "3"]
+    message: Emitente do regime normal deve usar CRT compatível.
+  - id: NFE_RN_002
+    path: document.itens[*].impostos.icms.cst
+    required: true
+    message: Itens de emitente do regime normal devem informar CST.

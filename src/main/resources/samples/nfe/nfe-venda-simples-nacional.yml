@@ -1,0 +1,83 @@
+document:
+  identificador: NFE_VENDA_SIMPLES_NACIONAL
+  layoutVersion: "4.00"
+  ide:
+    codigoUF: "43"
+    naturezaOperacao: Venda de mercadoria
+    modelo: "55"
+    serie: "1"
+    numero: "1001"
+    dataEmissao: "2026-01-15T10:30:00-03:00"
+    tipoOperacao: "1"
+    identificadorDestino: "1"
+    codigoMunicipioFatoGerador: "4310207"
+    tipoAmbiente: "2"
+    finalidade: "1"
+    consumidorFinal: "1"
+    indicadorPresenca: "1"
+  emitente:
+    cnpj: "99999999000191"
+    razaoSocial: EMPRESA EXEMPLO SIMPLES LTDA
+    nomeFantasia: EXEMPLO SIMPLES
+    inscricaoEstadual: "2243658792"
+    crt: "1"
+    endereco:
+      logradouro: Rua Exemplo
+      numero: "100"
+      bairro: Centro
+      codigoMunicipio: "4310207"
+      municipio: Ijui
+      uf: RS
+      cep: "98700000"
+      codigoPais: "1058"
+      pais: Brasil
+  destinatario:
+    cnpj: "88888888000172"
+    razaoSocial: CLIENTE EXEMPLO LTDA
+    indicadorIE: "1"
+    inscricaoEstadual: "2243658793"
+    endereco:
+      logradouro: Avenida Cliente
+      numero: "200"
+      bairro: Industrial
+      codigoMunicipio: "4310207"
+      municipio: Ijui
+      uf: RS
+      cep: "98700001"
+      codigoPais: "1058"
+      pais: Brasil
+  itens:
+    - numero: 1
+      produto:
+        codigo: PROD001
+        ean: SEM GTIN
+        descricao: Produto exemplo Simples Nacional
+        ncm: "61091000"
+        cfop: "5102"
+        unidade: UN
+        quantidade: 2.0000
+        valorUnitario: 50.00
+        valorProduto: 100.00
+      impostos:
+        icms:
+          origem: "0"
+          csosn: "102"
+        pis:
+          cst: "49"
+          baseCalculo: 0.00
+          aliquota: 0.00
+          valor: 0.00
+        cofins:
+          cst: "49"
+          baseCalculo: 0.00
+          aliquota: 0.00
+          valor: 0.00
+  totais:
+    frete: 0.00
+    seguro: 0.00
+    desconto: 0.00
+    outrasDespesas: 0.00
+  transporte:
+    modalidadeFrete: "9"
+  informacoesAdicionais:
+    complementares: Exemplo fictício gerado para homologação e onboarding técnico.

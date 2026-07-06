@@ -1,0 +1,13 @@
+id: NFE_VENDA
+description: Regras mínimas para NF-e de venda.
+rules:
+  - id: NFE_VENDA_001
+    path: document.ide.tipoOperacao
+    required: true
+    fixedValue: "1"
+    message: Venda deve ser operação de saída.
+  - id: NFE_VENDA_002
+    path: document.ide.finalidade
+    required: true
+    fixedValue: "1"
+    message: Venda comum deve usar finalidade 1 - NF-e normal.
