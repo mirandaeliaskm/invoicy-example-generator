@@ -56,6 +56,43 @@ Exemplos de diferenças aplicadas:
 | Produto unidade comercial | `uCom` | `uCOM` |
 | Código município fato gerador | `cMunFG` | `cMunFg` |
 
+
+## Estrutura JSON REST InvoiCy
+
+A saída JSON não espelha exatamente a hierarquia do XML de envio. Para integração REST, o gerador usa a estrutura aceita pelo InvoiCy, com uma lista na raiz e o documento dentro da chave `Documento`:
+
+```json
+[
+  {
+    "Documento": {
+      "ModeloDocumento": "NFe",
+      "Versao": 4,
+      "Parametros": {
+        "ApelidoLogomarca": ""
+      },
+      "ide": {},
+      "emit": {},
+      "dest": {},
+      "det": [],
+      "total": {},
+      "transp": {},
+      "pag": [],
+      "infAdic": {}
+    }
+  }
+]
+```
+
+Diferenças principais em relação ao XML:
+
+| Ponto | XML de envio | JSON REST |
+|---|---|---|
+| Raiz | `<Envio>` | Array com objeto `{ "Documento": ... }` |
+| Versão | `"4.00"` | `4` |
+| Parâmetros | Opcional/fora do XML básico | `Documento.Parametros` |
+| Itens | `det/detItem` | `det: [ ... ]` |
+| Pagamentos | `pag/pagItem` | `pag: [ ... ]` |
+
 ## O que este MVP entrega
 
 - API REST para listar use cases fiscais.
@@ -274,3 +311,12 @@ Os XSDs anexados foram mantidos em `src/main/resources/xsd/invoicy` como referê
 - `dhEmi` passa a ser gerado junto da sequência e incrementado em pelo menos 1 segundo quando necessário.
 - Adicionado endpoint `GET /api/v1/sequence/status`.
 - O arquivo `data/generator-sequence.properties` foi incluído no `.gitignore`.
+
+
+## Correção 0.2.4 - JSON REST InvoiCy
+
+- Alterado template JSON para raiz `[{ "Documento": { ... } }]`.
+- Adicionado cabeçalho `Documento.Parametros`.
+- Alterado `det` no JSON de objeto `detItem` para array direto.
+- Alterado `pag` no JSON de objeto `pagItem` para array direto.
+- Mantido XML de envio como `<Envio>`, pois este formato já foi validado e autorizado em homologação.

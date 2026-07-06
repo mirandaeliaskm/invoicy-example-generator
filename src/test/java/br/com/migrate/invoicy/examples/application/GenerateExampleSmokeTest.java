@@ -61,7 +61,11 @@ class GenerateExampleSmokeTest {
                 .andExpect(content().string(not(containsString("<IE_dest>"))))
                 .andExpect(content().string(containsString("<pagItem>")))
                 .andExpect(content().string(containsString("<tPag>01</tPag>")))
-                .andExpect(content().string(containsString("\\\"nNF\\\": \\\"1\\\"")));
+                .andExpect(content().string(containsString("\\\"Documento\\\"")))
+                .andExpect(content().string(containsString("\\\"det\\\": [")))
+                .andExpect(content().string(containsString("\\\"pag\\\": [")))
+                .andExpect(content().string(containsString("\\\"nNF\\\": 1")))
+                .andExpect(content().string(not(containsString("\\\"Envio\\\""))));
     }
 
     @Test
