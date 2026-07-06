@@ -13,7 +13,7 @@
 
     <groupId>br.com.migrate.invoicy</groupId>
     <artifactId>invoicy-example-generator</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
     <name>InvoiCy Example Generator</name>
     <description>Gerador centralizado de exemplos XML/JSON no Layout de Envio InvoiCy para integração fiscal InvoiCyForDev</description>
 
