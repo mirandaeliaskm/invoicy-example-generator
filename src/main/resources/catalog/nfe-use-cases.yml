@@ -2,7 +2,7 @@ useCases:
   - id: NFE_VENDA_SIMPLES_NACIONAL
     module: NFE
     name: NF-e de venda - Simples Nacional
-    description: Exemplo de NF-e modelo 55 para venda interna de mercadoria por empresa do Simples Nacional, usando CSOSN.
+    description: Exemplo de NF-e modelo 55 no Layout de Envio InvoiCy para venda interna de mercadoria por empresa do Simples Nacional, usando CSOSN.
     model: "55"
     layoutVersion: "4.00"
     outputs: [XML, JSON, README]
@@ -20,7 +20,7 @@ useCases:
   - id: NFE_VENDA_REGIME_NORMAL
     module: NFE
     name: NF-e de venda - Regime Normal
-    description: Exemplo de NF-e modelo 55 para venda interna de mercadoria por empresa do Regime Normal, usando CST 00.
+    description: Exemplo de NF-e modelo 55 no Layout de Envio InvoiCy para venda interna de mercadoria por empresa do Regime Normal, usando CST 00.
     model: "55"
     layoutVersion: "4.00"
     outputs: [XML, JSON, README]
@@ -38,7 +38,7 @@ useCases:
   - id: NFE_DEVOLUCAO_MERCADORIA
     module: NFE
     name: NF-e de devolução de mercadoria
-    description: Exemplo de NF-e de devolução com documento fiscal referenciado.
+    description: Exemplo de NF-e no Layout de Envio InvoiCy de devolução com documento fiscal referenciado.
     model: "55"
     layoutVersion: "4.00"
     outputs: [XML, JSON, README]
@@ -56,7 +56,7 @@ useCases:
   - id: NFE_EXPORTACAO
     module: NFE
     name: NF-e de exportação
-    description: Exemplo de NF-e de exportação com destinatário estrangeiro e CFOP iniciado por 7.
+    description: Exemplo de NF-e no Layout de Envio InvoiCy de exportação com destinatário estrangeiro e CFOP iniciado por 7.
     model: "55"
     layoutVersion: "4.00"
     outputs: [XML, JSON, README]

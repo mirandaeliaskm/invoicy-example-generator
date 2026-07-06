@@ -27,6 +27,8 @@ class GenerateExampleSmokeTest {
         ));
 
         assertThat(example.validationResult().isValid()).isTrue();
+        assertThat(example.files().get(OutputFormat.XML)).contains("<Envio>");
+        assertThat(example.files().get(OutputFormat.XML)).contains("<ModeloDocumento>NFe</ModeloDocumento>");
         assertThat(example.files().get(OutputFormat.XML)).contains("<nNF>9999</nNF>");
         assertThat(example.files().get(OutputFormat.JSON)).contains("\"nNF\": \"9999\"");
     }

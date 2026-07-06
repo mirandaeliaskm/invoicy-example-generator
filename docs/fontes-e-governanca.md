@@ -3,6 +3,7 @@
 ## Fontes recomendadas
 
 - Portal InvoiCyForDev Brasil.
+- Planilha interna `Layout 4.0 NFe_NFCe.xlsx` com o Layout de Envio InvoiCy.
 - Repositório público de integração InvoiCy BR.
 - Portal NF-e/SVRS.
 - Manual de Orientação do Contribuinte e schemas oficiais.
@@ -10,7 +11,7 @@
 
 ## Governança sugerida
 
-- Toda mudança de layout deve gerar nova versão de catálogo/ruleset.
+- Toda mudança de layout deve gerar nova versão de catálogo/ruleset e de `layouts/nfe/layout-envio-invoicy-{versao}.yml`.
 - Toda Nota Técnica relevante deve ser registrada com impacto previsto.
 - Templates publicados no portal devem passar por revisão do time BR + Qualidade.
 - Samples devem usar dados fictícios e ambiente de homologação.

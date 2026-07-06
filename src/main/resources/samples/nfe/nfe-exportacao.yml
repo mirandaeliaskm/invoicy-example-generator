@@ -1,76 +1,93 @@
 document:
   identificador: NFE_EXPORTACAO
-  layoutVersion: "4.00"
+  modeloDocumento: NFe
+  layoutVersion: '4.00'
   ide:
-    codigoUF: "43"
+    codigoUF: '43'
     naturezaOperacao: Exportação de mercadoria
-    modelo: "55"
-    serie: "1"
-    numero: "4001"
-    dataEmissao: "2026-01-15T10:30:00-03:00"
-    tipoOperacao: "1"
-    identificadorDestino: "3"
-    codigoMunicipioFatoGerador: "4310207"
-    tipoAmbiente: "2"
-    finalidade: "1"
-    consumidorFinal: "0"
-    indicadorPresenca: "9"
+    modelo: '55'
+    serie: '1'
+    numero: '4001'
+    dataEmissao: '2026-01-15T10:30:00-03:00'
+    tipoOperacao: '1'
+    identificadorDestino: '3'
+    codigoMunicipioFatoGerador: '4310207'
+    tipoAmbiente: '2'
+    finalidade: '1'
+    consumidorFinal: '0'
+    indicadorPresenca: '9'
+    fusoHorario: -03:00
+    tipoImpressao: '1'
+    tipoEmissao: '1'
   emitente:
-    cnpj: "99999999000191"
+    cnpj: '99999999000191'
     razaoSocial: EMPRESA EXPORTADORA EXEMPLO LTDA
     nomeFantasia: EXPORTADORA EXEMPLO
-    inscricaoEstadual: "2243658792"
-    crt: "3"
+    inscricaoEstadual: '2243658792'
+    crt: '3'
     endereco:
       logradouro: Rua Exemplo
-      numero: "100"
+      numero: '100'
       bairro: Centro
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700000"
-      codigoPais: "1058"
+      cep: '98700000'
+      codigoPais: '1058'
       pais: Brasil
   destinatario:
     idEstrangeiro: FOREIGN-CUSTOMER-001
     razaoSocial: FOREIGN CUSTOMER LLC
-    indicadorIE: "9"
+    indicadorIE: '9'
     endereco:
       logradouro: 100 Example Avenue
-      numero: "100"
+      numero: '100'
       bairro: Downtown
-      codigoMunicipio: "9999999"
+      codigoMunicipio: '9999999'
       municipio: Exterior
       uf: EX
-      cep: "00000000"
-      codigoPais: "2496"
+      cep: '00000000'
+      codigoPais: '2496'
       pais: Estados Unidos
   itens:
-    - numero: 1
-      produto:
-        codigo: EXP001
-        ean: SEM GTIN
-        descricao: Produto destinado à exportação
-        ncm: "94036000"
-        cfop: "7102"
-        unidade: UN
-        quantidade: 10.0000
-        valorUnitario: 100.00
-        valorProduto: 1000.00
-      impostos:
-        icms:
-          origem: "0"
-          cst: "41"
-          modalidadeBaseCalculo: "3"
-          baseCalculo: 0.00
-          aliquota: 0.00
-          valor: 0.00
+  - numero: 1
+    produto:
+      codigo: EXP001
+      ean: SEM GTIN
+      descricao: Produto destinado à exportação
+      ncm: '94036000'
+      cfop: '7102'
+      unidade: UN
+      quantidade: 10.0
+      valorUnitario: 100.0
+      valorProduto: 1000.0
+      tipoItem: '0'
+      indicadorTotal: '1'
+      eanTributavel: SEM GTIN
+      unidadeTributavel: UN
+      quantidadeTributavel: 10.0
+      valorUnitarioTributavel: 100.0
+    impostos:
+      icms:
+        origem: '0'
+        cst: '41'
+        modalidadeBaseCalculo: '3'
+        baseCalculo: 0.0
+        aliquota: 0.0
+        valor: 0.0
   totais:
-    frete: 0.00
-    seguro: 0.00
-    desconto: 0.00
-    outrasDespesas: 0.00
+    frete: 0.0
+    seguro: 0.0
+    desconto: 0.0
+    outrasDespesas: 0.0
+    baseCalculoIcms: 0.0
+    valorIcms: 0.0
+    valorIcmsDesonerado: 0.0
+    baseCalculoST: 0.0
+    valorII: 0.0
+    valorPis: 0.0
+    valorCofins: 0.0
   transporte:
-    modalidadeFrete: "9"
+    modalidadeFrete: '9'
   informacoesAdicionais:
     complementares: Exemplo fictício de operação de exportação para onboarding técnico.

@@ -43,6 +43,33 @@
       }
     },
     {
+      "name": "List Layout Envio InvoiCy fields",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/v1/layouts/NFE/fields?version=4.00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "layouts",
+            "NFE",
+            "fields"
+          ],
+          "query": [
+            {
+              "key": "version",
+              "value": "4.00"
+            }
+          ]
+        }
+      }
+    },
+    {
       "name": "Generate NF-e Simple Nacional",
       "request": {
         "method": "POST",

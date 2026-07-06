@@ -1,83 +1,101 @@
 document:
   identificador: NFE_VENDA_SIMPLES_NACIONAL
-  layoutVersion: "4.00"
+  modeloDocumento: NFe
+  layoutVersion: '4.00'
   ide:
-    codigoUF: "43"
+    codigoUF: '43'
     naturezaOperacao: Venda de mercadoria
-    modelo: "55"
-    serie: "1"
-    numero: "1001"
-    dataEmissao: "2026-01-15T10:30:00-03:00"
-    tipoOperacao: "1"
-    identificadorDestino: "1"
-    codigoMunicipioFatoGerador: "4310207"
-    tipoAmbiente: "2"
-    finalidade: "1"
-    consumidorFinal: "1"
-    indicadorPresenca: "1"
+    modelo: '55'
+    serie: '1'
+    numero: '1001'
+    dataEmissao: '2026-01-15T10:30:00-03:00'
+    tipoOperacao: '1'
+    identificadorDestino: '1'
+    codigoMunicipioFatoGerador: '4310207'
+    tipoAmbiente: '2'
+    finalidade: '1'
+    consumidorFinal: '1'
+    indicadorPresenca: '1'
+    fusoHorario: -03:00
+    tipoImpressao: '1'
+    tipoEmissao: '1'
   emitente:
-    cnpj: "99999999000191"
+    cnpj: '99999999000191'
     razaoSocial: EMPRESA EXEMPLO SIMPLES LTDA
     nomeFantasia: EXEMPLO SIMPLES
-    inscricaoEstadual: "2243658792"
-    crt: "1"
+    inscricaoEstadual: '2243658792'
+    crt: '1'
     endereco:
       logradouro: Rua Exemplo
-      numero: "100"
+      numero: '100'
       bairro: Centro
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700000"
-      codigoPais: "1058"
+      cep: '98700000'
+      codigoPais: '1058'
       pais: Brasil
   destinatario:
-    cnpj: "88888888000172"
+    cnpj: '88888888000172'
     razaoSocial: CLIENTE EXEMPLO LTDA
-    indicadorIE: "1"
-    inscricaoEstadual: "2243658793"
+    indicadorIE: '1'
+    inscricaoEstadual: '2243658793'
     endereco:
       logradouro: Avenida Cliente
-      numero: "200"
+      numero: '200'
       bairro: Industrial
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700001"
-      codigoPais: "1058"
+      cep: '98700001'
+      codigoPais: '1058'
       pais: Brasil
   itens:
-    - numero: 1
-      produto:
-        codigo: PROD001
-        ean: SEM GTIN
-        descricao: Produto exemplo Simples Nacional
-        ncm: "61091000"
-        cfop: "5102"
-        unidade: UN
-        quantidade: 2.0000
-        valorUnitario: 50.00
-        valorProduto: 100.00
-      impostos:
-        icms:
-          origem: "0"
-          csosn: "102"
-        pis:
-          cst: "49"
-          baseCalculo: 0.00
-          aliquota: 0.00
-          valor: 0.00
-        cofins:
-          cst: "49"
-          baseCalculo: 0.00
-          aliquota: 0.00
-          valor: 0.00
+  - numero: 1
+    produto:
+      codigo: PROD001
+      ean: SEM GTIN
+      descricao: Produto exemplo Simples Nacional
+      ncm: '61091000'
+      cfop: '5102'
+      unidade: UN
+      quantidade: 2.0
+      valorUnitario: 50.0
+      valorProduto: 100.0
+      tipoItem: '0'
+      indicadorTotal: '1'
+      eanTributavel: SEM GTIN
+      unidadeTributavel: UN
+      quantidadeTributavel: 2.0
+      valorUnitarioTributavel: 50.0
+    impostos:
+      icms:
+        origem: '0'
+        csosn: '102'
+        cst: '102'
+      pis:
+        cst: '49'
+        baseCalculo: 0.0
+        aliquota: 0.0
+        valor: 0.0
+      cofins:
+        cst: '49'
+        baseCalculo: 0.0
+        aliquota: 0.0
+        valor: 0.0
   totais:
-    frete: 0.00
-    seguro: 0.00
-    desconto: 0.00
-    outrasDespesas: 0.00
+    frete: 0.0
+    seguro: 0.0
+    desconto: 0.0
+    outrasDespesas: 0.0
+    baseCalculoIcms: 0.0
+    valorIcms: 0.0
+    valorIcmsDesonerado: 0.0
+    baseCalculoST: 0.0
+    valorII: 0.0
+    valorPis: 0.0
+    valorCofins: 0.0
   transporte:
-    modalidadeFrete: "9"
+    modalidadeFrete: '9'
   informacoesAdicionais:
     complementares: Exemplo fictício gerado para homologação e onboarding técnico.

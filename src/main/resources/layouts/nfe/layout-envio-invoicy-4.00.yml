@@ -1,0 +1,6610 @@
+module: NFE
+documentModel: '55'
+layoutVersion: '4.00'
+layoutName: Layout Envio InvoiCy NF-e/NFC-e 4.00
+source:
+  fileName: Layout 4.0 NFe_NFCe.xlsx
+  sheet: NF-e
+  generatedFrom: Planilha de Layout Envio InvoiCy anexada pelo usuário
+  extractionNote: Campos filtrados para NF-e modelo 55; tags e hierarquia preservadas conforme colunas Campo, ID, Ele, Pai, Ocorr. e Obrig.
+fields:
+- id: A01
+  path: Envio
+  tag: Envio
+  description: Elemento Superior da Estrutura
+  elementKind: G
+  parent: RAIZ
+  type: '-'
+  occurrence: '-'
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: A02
+  path: Envio/ModeloDocumento
+  tag: ModeloDocumento
+  description: Modelo de documento a ser enviado
+  elementKind: E
+  parent: A01
+  type: V (10)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: A03
+  path: Envio/Versao
+  tag: Versao
+  description: Versão do Layout do documento
+  elementKind: E
+  parent: A01
+  type: N (5.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: A04
+  path: Envio/ChaveParceiro
+  tag: ChaveParceiro
+  description: Chave de Parceiro
+  elementKind: E
+  parent: A01
+  type: C (30)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: A05
+  path: Envio/ChaveAcesso
+  tag: ChaveAcesso
+  description: Chave de Acesso
+  elementKind: E
+  parent: A01
+  type: C (50)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: A06
+  path: Envio/Imprimir
+  tag: Imprimir
+  description: Efetuar a impressão automática dos documentos efetivados
+  elementKind: E
+  parent: A01
+  type: C (1)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: A07
+  path: Envio/ApelidoImpressora
+  tag: ApelidoImpressora
+  description: Apelido da impressora que foi cadastrada no InvoiCy Conector
+  elementKind: E
+  parent: A01
+  type: C (300)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: A08
+  path: Envio/ImprimirDuasVias
+  tag: ImprimirDuasVias
+  description: Imprimir duas vias do DANFE
+  elementKind: E
+  parent: A01
+  type: C (1)
+  occurrence: 0-1
+  required: N
+  version: 2.38.0
+  model: '55'
+- id: A09
+  path: Envio/Parametros
+  tag: Parametros
+  description: Grupo de parâmetros
+  elementKind: G
+  parent: A01
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 2.27.0
+  model: '55'
+- id: A10
+  path: Envio/ImprimirDuasVias/ApelidoLogomarca
+  tag: ApelidoLogomarca
+  description: Apelido da logomarca para impressão no DANFE
+  elementKind: E
+  parent: A08
+  type: C (100)
+  occurrence: 0-1
+  required: N
+  version: 2.27.0
+  model: '55'
+- id: Aa01
+  path: Envio/ide
+  tag: ide
+  description: TAG de grupo das informações de identificação da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa02
+  path: Envio/ide/cNF
+  tag: cNF
+  description: Código Numérico que compõe a Chave de Acesso
+  elementKind: E
+  parent: Aa01
+  type: N (8)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa03
+  path: Envio/ide/cUF
+  tag: cUF
+  description: Código da UF do emitente do Documento Fiscal
+  elementKind: E
+  parent: Aa01
+  type: N (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa04
+  path: Envio/ide/natOp
+  tag: natOp
+  description: Descrição da Natureza da Operação
+  elementKind: E
+  parent: Aa01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa05
+  path: Envio/ide/mod
+  tag: mod
+  description: Código do Modelo do Documento Fiscal
+  elementKind: E
+  parent: Aa01
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa06
+  path: Envio/ide/serie
+  tag: serie
+  description: Série do Documento Fiscal
+  elementKind: E
+  parent: Aa01
+  type: V (3)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa07
+  path: Envio/ide/IDUnico
+  tag: IDUnico
+  description: Controle de Numeração de NF-e / modelo 55
+  elementKind: E
+  parent: Aa01
+  type: C (200)
+  occurrence: 0-1
+  required: N
+  version: ''
+  model: ''
+- id: Aa08
+  path: Envio/ide/nNF
+  tag: nNF
+  description: 'Número do Documento Fiscal '
+  elementKind: E
+  parent: Aa01
+  type: N (9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa09
+  path: Envio/ide/dhEmi
+  tag: dhEmi
+  description: Data de emissão do Documento Fiscal
+  elementKind: E
+  parent: Aa01
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa10
+  path: Envio/ide/fusoHorario
+  tag: fusoHorario
+  description: Fuso horário da emissão
+  elementKind: E
+  parent: Aa01
+  type: C (6)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa11
+  path: Envio/ide/dhSaiEnt
+  tag: dhSaiEnt
+  description: Data de Saída ou da Entrada da Mercadoria/Produto
+  elementKind: E
+  parent: Aa01
+  type: D
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa12
+  path: Envio/ide/tpNf
+  tag: tpNf
+  description: Tipo de Operação
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa13
+  path: Envio/ide/idDest
+  tag: idDest
+  description: Identificador de local de destino da operação
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa14
+  path: Envio/ide/indFinal
+  tag: indFinal
+  description: Indica operação com Consumidor final
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa15
+  path: Envio/ide/indPres
+  tag: indPres
+  description: Indicador de presença do comprador no estabelecimento comercial no momento da operação
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: Aa16
+  path: Envio/ide/indIntermed
+  tag: indIntermed
+  description: Indicador de Intermediador/marketplace
+  elementKind: E
+  parent: Aa01
+  type: C (1)
+  occurrence: 0-1
+  required: N
+  version: 2.38.0
+  model: 55/65
+- id: Aa17
+  path: Envio/ide/cMunFg
+  tag: cMunFg
+  description: Código do Município de Ocorrência do Fato Gerador
+  elementKind: E
+  parent: Aa01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa18
+  path: Envio/ide/tpImp
+  tag: tpImp
+  description: Formato de Impressão do DANFE
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa19
+  path: Envio/ide/tpEmis
+  tag: tpEmis
+  description: Forma de Emissão da NF-e
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa20
+  path: Envio/ide/tpAmb
+  tag: tpAmb
+  description: Ambiente de emissão
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa21
+  path: Envio/ide/xJust
+  tag: xJust
+  description: Justificativa de entrada em contingência
+  elementKind: E
+  parent: Aa01
+  type: V (15-256)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa22
+  path: Envio/ide/dhCont
+  tag: dhCont
+  description: Data e Hora da entrada em Contingência
+  elementKind: E
+  parent: Aa01
+  type: D
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa23
+  path: Envio/ide/finNFe
+  tag: finNFe
+  description: Finalidade de emissão da NF-e
+  elementKind: E
+  parent: Aa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa24
+  path: Envio/ide/EmailArquivos
+  tag: EmailArquivos
+  description: E-mails para recebimento dos arquivos
+  elementKind: E
+  parent: Aa01
+  type: V (1000)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Aa25
+  path: Envio/ide/NumeroPedido
+  tag: NumeroPedido
+  description: Número do pedido
+  elementKind: E
+  parent: Aa01
+  type: V (100)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab01
+  path: Envio/ide/NFRef
+  tag: NFRef
+  description: Elemento do grupo de notas fiscais referenciadas (opcional)
+  elementKind: G
+  parent: Aa01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab02
+  path: Envio/ide/NFRef/NFRefItem
+  tag: NFRefItem
+  description: Elemento Superior da Estrutura de notas fiscais referenciadas
+  elementKind: G
+  parent: Ab01
+  type: '-'
+  occurrence: 1-500
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Ab03
+  path: Envio/ide/NFRef/NFRefItem/refNFe
+  tag: refNFe
+  description: Chave de acesso da NF-e referenciada
+  elementKind: E
+  parent: Ab02
+  type: C (44)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab04
+  path: Envio/ide/NFRef/NFRefItem/cUF_refNFE
+  tag: cUF_refNFE
+  description: Código da UF do emitente do Documento Fiscal
+  elementKind: E
+  parent: Ab02
+  type: N (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab05
+  path: Envio/ide/NFRef/NFRefItem/AAMM
+  tag: AAMM
+  description: Ano e Mês de emissão da NF
+  elementKind: E
+  parent: Ab02
+  type: N (4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab06
+  path: Envio/ide/NFRef/NFRefItem/CNPJ
+  tag: CNPJ
+  description: CNPJ do emitente
+  elementKind: CE
+  parent: Ab02
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab07
+  path: Envio/ide/NFRef/NFRefItem/CPF
+  tag: CPF
+  description: CPF do Produtor Rural
+  elementKind: CE
+  parent: Ab02
+  type: V (11)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab08
+  path: Envio/ide/NFRef/NFRefItem/mod_refNFE
+  tag: mod_refNFE
+  description: Modelo do Documento Fiscal
+  elementKind: E
+  parent: Ab02
+  type: N (2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: Ab09
+  path: Envio/ide/NFRef/NFRefItem/serie_refNFE
+  tag: serie_refNFE
+  description: Série do Documento Fiscal
+  elementKind: E
+  parent: Ab02
+  type: V (1-3)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab10
+  path: Envio/ide/NFRef/NFRefItem/nNF_refNFE
+  tag: nNF_refNFE
+  description: Número do Documento Fiscal
+  elementKind: E
+  parent: Ab02
+  type: N (1-9)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab11
+  path: Envio/ide/NFRef/NFRefItem/IE_refNFP
+  tag: IE_refNFP
+  description: IE do emitente
+  elementKind: E
+  parent: Ab02
+  type: V (1-14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab12
+  path: Envio/ide/NFRef/NFRefItem/RefCte
+  tag: RefCte
+  description: Chave de acesso do CT-e referenciado
+  elementKind: E
+  parent: Ab02
+  type: C (44)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab13
+  path: Envio/ide/NFRef/NFRefItem/mod_refECF
+  tag: mod_refECF
+  description: Modelo do Documento Fiscal
+  elementKind: E
+  parent: Ab02
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab14
+  path: Envio/ide/NFRef/NFRefItem/nECF_refECF
+  tag: nECF_refECF
+  description: Número de ordem sequencial do ECF
+  elementKind: E
+  parent: Ab02
+  type: N (3)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ab15
+  path: Envio/ide/NFRef/NFRefItem/nCOO_refECF
+  tag: nCOO_refECF
+  description: Número do Contador de Ordem de Operação - COO
+  elementKind: E
+  parent: Ab02
+  type: N (6)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: B01
+  path: Envio/emit
+  tag: emit
+  description: TAG de grupo de identificação do emitente da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: B02
+  path: Envio/emit/CNPJ_emit
+  tag: CNPJ_emit
+  description: CNPJ do emitente
+  elementKind: CE
+  parent: B01
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: B03
+  path: Envio/emit/CPF_emit
+  tag: CPF_emit
+  description: CPF do emitente
+  elementKind: CE
+  parent: B01
+  type: V (11)
+  occurrence: 1-1
+  required: S
+  version: 3.0.0.0
+  model: 55/65
+- id: B04
+  path: Envio/emit/xNome
+  tag: xNome
+  description: Razão Social ou Nome do emitente
+  elementKind: E
+  parent: B01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: B05
+  path: Envio/emit/xFant
+  tag: xFant
+  description: Nome fantasia
+  elementKind: E
+  parent: B01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: B06
+  path: Envio/emit/IM
+  tag: IM
+  description: Inscrição Municipal
+  elementKind: E
+  parent: B01
+  type: V (1-15)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: B07
+  path: Envio/emit/CNAE
+  tag: CNAE
+  description: CNAE fiscal
+  elementKind: E
+  parent: B01
+  type: V (7)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: B08
+  path: Envio/emit/IE
+  tag: IE
+  description: Inscrição Estadual
+  elementKind: E
+  parent: B01
+  type: V (0-14)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: B09
+  path: Envio/emit/IEST
+  tag: IEST
+  description: IE do Substituto Tributário
+  elementKind: E
+  parent: B01
+  type: V (2-14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: B10
+  path: Envio/emit/CRT
+  tag: CRT
+  description: Código de Regime Tributário
+  elementKind: E
+  parent: B01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba01
+  path: Envio/emit/enderEmit
+  tag: enderEmit
+  description: TAG de grupo do Endereço do emitente
+  elementKind: G
+  parent: B01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba02
+  path: Envio/emit/enderEmit/xLgr
+  tag: xLgr
+  description: Logradouro
+  elementKind: E
+  parent: Ba01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba03
+  path: Envio/emit/enderEmit/nro
+  tag: nro
+  description: Número
+  elementKind: E
+  parent: Ba01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba04
+  path: Envio/emit/enderEmit/xCpl
+  tag: xCpl
+  description: Complemento
+  elementKind: E
+  parent: Ba01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba05
+  path: Envio/emit/enderEmit/xBairro
+  tag: xBairro
+  description: Bairro
+  elementKind: E
+  parent: Ba01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba06
+  path: Envio/emit/enderEmit/cMun
+  tag: cMun
+  description: Código do município
+  elementKind: E
+  parent: Ba01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba07
+  path: Envio/emit/enderEmit/xMun
+  tag: xMun
+  description: Nome do município
+  elementKind: E
+  parent: Ba01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba08
+  path: Envio/emit/enderEmit/UF
+  tag: UF
+  description: Sigla da UF
+  elementKind: E
+  parent: Ba01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba09
+  path: Envio/emit/enderEmit/CEP
+  tag: CEP
+  description: Código do CEP
+  elementKind: E
+  parent: Ba01
+  type: N (8)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba10
+  path: Envio/emit/enderEmit/cPais
+  tag: cPais
+  description: Código do País
+  elementKind: E
+  parent: Ba01
+  type: N (4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba11
+  path: Envio/emit/enderEmit/xPais
+  tag: xPais
+  description: Nome do País
+  elementKind: E
+  parent: Ba01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba12
+  path: Envio/emit/enderEmit/fone
+  tag: fone
+  description: Telefone
+  elementKind: E
+  parent: Ba01
+  type: N (6-14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ba13
+  path: Envio/emit/enderEmit/Email
+  tag: Email
+  description: E-mail do Emitente
+  elementKind: E
+  parent: Ba01
+  type: V (1-1000)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: C01
+  path: Envio/dest
+  tag: dest
+  description: TAG de grupo de identificação do Destinatário da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: C02
+  path: Envio/dest/CNPJ_dest
+  tag: CNPJ_dest
+  description: CNPJ do destinatário
+  elementKind: CE
+  parent: C01
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: C03
+  path: Envio/dest/CPF_dest
+  tag: CPF_dest
+  description: CPF do destinatário
+  elementKind: CE
+  parent: C01
+  type: V (11)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: C04
+  path: Envio/dest/idEstrangeiro
+  tag: idEstrangeiro
+  description: Identificação do destinatário no caso de comprador estrangeiro
+  elementKind: CE
+  parent: C01
+  type: V (5-20)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: C05
+  path: Envio/dest/xNome_dest
+  tag: xNome_dest
+  description: Razão Social ou nome do destinatário
+  elementKind: E
+  parent: C01
+  type: V (2-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: C06
+  path: Envio/dest/IE_dest
+  tag: IE_dest
+  description: 'Inscrição Estadual do Destinatário '
+  elementKind: E
+  parent: C01
+  type: V (2-14)
+  occurrence: 0-1
+  required: N
+  version: 2.59.0.0
+  model: 55/65
+- id: C07
+  path: Envio/dest/ISUF
+  tag: ISUF
+  description: Inscrição na SUFRAMA
+  elementKind: E
+  parent: C01
+  type: V (8-9)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: C08
+  path: Envio/dest/indIEDest
+  tag: indIEDest
+  description: Indicador da IE do Destinatário
+  elementKind: E
+  parent: C01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: C09
+  path: Envio/dest/IM_dest
+  tag: IM_dest
+  description: Inscrição Municipal
+  elementKind: E
+  parent: C01
+  type: V (1-15)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca01
+  path: Envio/dest/enderDest
+  tag: enderDest
+  description: TAG de grupo de endereço do Destinatário da NF-e
+  elementKind: G
+  parent: C01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca02
+  path: Envio/dest/enderDest/nro_dest
+  tag: nro_dest
+  description: Número do Destinatário
+  elementKind: E
+  parent: Ca01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca03
+  path: Envio/dest/enderDest/xCpl_dest
+  tag: xCpl_dest
+  description: Complemento
+  elementKind: E
+  parent: Ca01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca04
+  path: Envio/dest/enderDest/xBairro_dest
+  tag: xBairro_dest
+  description: Bairro
+  elementKind: E
+  parent: Ca01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca05
+  path: Envio/dest/enderDest/xEmail_dest
+  tag: xEmail_dest
+  description: E-mail do destinatário para recebimento dos arquivos
+  elementKind: E
+  parent: Ca01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca06
+  path: Envio/dest/enderDest/xLgr_dest
+  tag: xLgr_dest
+  description: Logradouro
+  elementKind: E
+  parent: Ca01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca07
+  path: Envio/dest/enderDest/xPais_dest
+  tag: xPais_dest
+  description: Nome do País
+  elementKind: E
+  parent: Ca01
+  type: V (2-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca08
+  path: Envio/dest/enderDest/cMun_dest
+  tag: cMun_dest
+  description: Código do município
+  elementKind: E
+  parent: Ca01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca09
+  path: Envio/dest/enderDest/xMun_dest
+  tag: xMun_dest
+  description: Nome do município
+  elementKind: E
+  parent: Ca01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca10
+  path: Envio/dest/enderDest/UF_dest
+  tag: UF_dest
+  description: Sigla da UF
+  elementKind: E
+  parent: Ca01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca11
+  path: Envio/dest/enderDest/CEP_dest
+  tag: CEP_dest
+  description: Código do CEP
+  elementKind: E
+  parent: Ca01
+  type: N (8)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca12
+  path: Envio/dest/enderDest/cPais_dest
+  tag: cPais_dest
+  description: Código do País
+  elementKind: E
+  parent: Ca01
+  type: N (2-4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ca13
+  path: Envio/dest/enderDest/fone_dest
+  tag: fone_dest
+  description: Telefone do destinatário
+  elementKind: E
+  parent: Ca01
+  type: N (6-14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: D01
+  path: Envio/retirada
+  tag: retirada
+  description: TAG de grupo de identificação do Local de retirada
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: D02
+  path: Envio/retirada/CNPJ_ret
+  tag: CNPJ_ret
+  description: CNPJ
+  elementKind: CE
+  parent: D01
+  type: V (0-14)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D03
+  path: Envio/retirada/CPF_ret
+  tag: CPF_ret
+  description: CPF
+  elementKind: CE
+  parent: D01
+  type: V (11)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D04
+  path: Envio/retirada/xNome_ret
+  tag: xNome_ret
+  description: Razão Social ou Nome do Expedidor
+  elementKind: E
+  parent: D01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: D05
+  path: Envio/retirada/xLgr_ret
+  tag: xLgr_ret
+  description: Logradouro
+  elementKind: E
+  parent: D01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D06
+  path: Envio/retirada/nro_ret
+  tag: nro_ret
+  description: Número
+  elementKind: E
+  parent: D01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D07
+  path: Envio/retirada/xCpl_ret
+  tag: xCpl_ret
+  description: Complemento
+  elementKind: E
+  parent: D01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: D08
+  path: Envio/retirada/xBairro_ret
+  tag: xBairro_ret
+  description: Bairro
+  elementKind: E
+  parent: D01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D09
+  path: Envio/retirada/xMun_ret
+  tag: xMun_ret
+  description: Nome do Município
+  elementKind: E
+  parent: D01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D10
+  path: Envio/retirada/cMun_ret
+  tag: cMun_ret
+  description: Código do município
+  elementKind: E
+  parent: D01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D11
+  path: Envio/retirada/UF_ret
+  tag: UF_ret
+  description: Sigla da UF
+  elementKind: E
+  parent: D01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: D12
+  path: Envio/retirada/CEP_ret
+  tag: CEP_ret
+  description: Código do CEP
+  elementKind: E
+  parent: D01
+  type: N (8)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: D13
+  path: Envio/retirada/cPais_ret
+  tag: cPais_ret
+  description: Código do País
+  elementKind: E
+  parent: D01
+  type: N (4)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: D14
+  path: Envio/retirada/xPais_ret
+  tag: xPais_ret
+  description: Nome do País
+  elementKind: E
+  parent: D01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: D15
+  path: Envio/retirada/fone_ret
+  tag: fone_ret
+  description: Telefone
+  elementKind: E
+  parent: D01
+  type: N (14)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: D16
+  path: Envio/retirada/email_ret
+  tag: email_ret
+  description: Endereço do e-mail do Expedidor
+  elementKind: E
+  parent: D01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: D17
+  path: Envio/retirada/IE_ret
+  tag: IE_ret
+  description: Inscrição Estadual do Estabelecimento Expedidor
+  elementKind: E
+  parent: D01
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E01
+  path: Envio/entrega
+  tag: entrega
+  description: TAG de grupo de identificação do Local de entrega
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: E02
+  path: Envio/entrega/CNPJ_entr
+  tag: CNPJ_entr
+  description: CNPJ
+  elementKind: CE
+  parent: E01
+  type: V (0-14)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E03
+  path: Envio/entrega/CPF_entr
+  tag: CPF_entr
+  description: CPF
+  elementKind: CE
+  parent: E01
+  type: V (11)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E04
+  path: Envio/entrega/xNome_entr
+  tag: xNome_entr
+  description: Razão Social ou Nome do Recebedor
+  elementKind: E
+  parent: E01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E05
+  path: Envio/entrega/xLgr_entr
+  tag: xLgr_entr
+  description: Logradouro
+  elementKind: E
+  parent: E01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E06
+  path: Envio/entrega/nro_entr
+  tag: nro_entr
+  description: Número
+  elementKind: E
+  parent: E01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E07
+  path: Envio/entrega/xCpl_entr
+  tag: xCpl_entr
+  description: Complemento
+  elementKind: E
+  parent: E01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: E08
+  path: Envio/entrega/xBairro_entr
+  tag: xBairro_entr
+  description: Bairro
+  elementKind: E
+  parent: E01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E09
+  path: Envio/entrega/cMun_entr
+  tag: cMun_entr
+  description: Código do município
+  elementKind: E
+  parent: E01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E10
+  path: Envio/entrega/xMun_entr
+  tag: xMun_entr
+  description: Nome do município
+  elementKind: E
+  parent: E01
+  type: V (2-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E11
+  path: Envio/entrega/UF_entr
+  tag: UF_entr
+  description: Sigla da UF
+  elementKind: E
+  parent: E01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: E12
+  path: Envio/entrega/CEP_entr
+  tag: CEP_entr
+  description: Código do CEP
+  elementKind: E
+  parent: E01
+  type: N (8)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E13
+  path: Envio/entrega/cPais_entr
+  tag: cPais_entr
+  description: Código do País
+  elementKind: E
+  parent: E01
+  type: N (4)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E14
+  path: Envio/entrega/xPais_entr
+  tag: xPais_entr
+  description: Nome do País
+  elementKind: E
+  parent: E01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E15
+  path: Envio/entrega/fone_entr
+  tag: fone_entr
+  description: Telefone
+  elementKind: E
+  parent: E01
+  type: N (14)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E16
+  path: Envio/entrega/email_entr
+  tag: email_entr
+  description: Endereço do e-mail do Recebedor
+  elementKind: E
+  parent: E01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: E17
+  path: Envio/entrega/IE_entr
+  tag: IE_entr
+  description: Inscrição Estadual do Estabelecimento Recebedor
+  elementKind: E
+  parent: E01
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: F01
+  path: Envio/autXML
+  tag: autXML
+  description: TAG de grupo de Pessoas autorizadas para o download do XML do documento
+  elementKind: G
+  parent: A01
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: F02
+  path: Envio/autXML/autXMLItem
+  tag: autXMLItem
+  description: TAG superior das pessoas autorizadas a realizar o download do documento
+  elementKind: G
+  parent: F01
+  type: ''
+  occurrence: 1-10
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: F03
+  path: Envio/autXML/autXMLItem/CNPJ_aut
+  tag: CNPJ_aut
+  description: CNPJ do Autorizado
+  elementKind: CE
+  parent: F02
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: F04
+  path: Envio/autXML/autXMLItem/CPF_aut
+  tag: CPF_aut
+  description: CPF do Autorizado
+  elementKind: CE
+  parent: F02
+  type: V (11)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G01
+  path: Envio/det
+  tag: det
+  description: TAG de grupo do detalhamento de Produtos e Serviços da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G02
+  path: Envio/det/detItem
+  tag: detItem
+  description: Elemento Superior da Estrutura. Detalhamento do Item
+  elementKind: G
+  parent: G01
+  type: '-'
+  occurrence: 1-990
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G03
+  path: Envio/det/detItem/infADProd
+  tag: infADProd
+  description: Informações Adicionais do Produto
+  elementKind: E
+  parent: G02
+  type: V (500)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G04
+  path: Envio/det/detItem/prod
+  tag: prod
+  description: TAG de grupo do detalhamento de Produtos e Serviços da NF-e
+  elementKind: G
+  parent: G02
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G05
+  path: Envio/det/detItem/prod/cProd
+  tag: cProd
+  description: Código do produto ou serviço
+  elementKind: E
+  parent: G04
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G06
+  path: Envio/det/detItem/prod/cEAN
+  tag: cEAN
+  description: GTIN (Global Trade Item Number) do produto, antigo código EAN ou código de barras.
+  elementKind: E
+  parent: G04
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: G07
+  path: Envio/det/detItem/prod/cBarra
+  tag: cBarra
+  description: Código de barras diferente do padrão GTIN
+  elementKind: E
+  parent: G04
+  type: C (30)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: G08
+  path: Envio/det/detItem/prod/xProd
+  tag: xProd
+  description: Descrição do produto ou serviço
+  elementKind: E
+  parent: G04
+  type: V (1-120)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G09
+  path: Envio/det/detItem/prod/NCM
+  tag: NCM
+  description: Código NCM com 8 dígitos ou 2 dígitos (gênero)
+  elementKind: E
+  parent: G04
+  type: V (2-8)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G10
+  path: Envio/det/detItem/prod/EXTIPI
+  tag: EXTIPI
+  description: EX_TIPI
+  elementKind: E
+  parent: G04
+  type: V (2-3)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G11
+  path: Envio/det/detItem/prod/CFOP
+  tag: CFOP
+  description: Código Fiscal de Operações e Prestações
+  elementKind: E
+  parent: G04
+  type: N (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G12
+  path: Envio/det/detItem/prod/uCOM
+  tag: uCOM
+  description: Unidade Comercial
+  elementKind: E
+  parent: G04
+  type: V (1-6)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G13
+  path: Envio/det/detItem/prod/qCOM
+  tag: qCOM
+  description: Quantidade Comercial
+  elementKind: E
+  parent: G04
+  type: N (11.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G14
+  path: Envio/det/detItem/prod/vUnCom
+  tag: vUnCom
+  description: Valor Unitário de comercialização
+  elementKind: E
+  parent: G04
+  type: N (21.10)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G15
+  path: Envio/det/detItem/prod/vProd
+  tag: vProd
+  description: Valor Total Bruto dos Produtos ou Serviços
+  elementKind: E
+  parent: G04
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G16
+  path: Envio/det/detItem/prod/cEANTrib
+  tag: cEANTrib
+  description: GTIN (Global Trade Item Number) da unidade tributável, antigo código EAN ou código de barras.
+  elementKind: E
+  parent: G04
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: G17
+  path: Envio/det/detItem/prod/cBarraTrib
+  tag: cBarraTrib
+  description: Código de Barras da unidade tributável que seja diferente do padrão GTIN
+  elementKind: E
+  parent: G04
+  type: C (30)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: G18
+  path: Envio/det/detItem/prod/uTrib
+  tag: uTrib
+  description: Unidade Tributável
+  elementKind: E
+  parent: G04
+  type: V (1-6)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G19
+  path: Envio/det/detItem/prod/qTrib
+  tag: qTrib
+  description: Quantidade Tributável
+  elementKind: E
+  parent: G04
+  type: N (11.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G20
+  path: Envio/det/detItem/prod/vUnTrib
+  tag: vUnTrib
+  description: Valor Unitário de tributação
+  elementKind: E
+  parent: G04
+  type: N (21.10)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G21
+  path: Envio/det/detItem/prod/vFrete
+  tag: vFrete
+  description: Valor Total do Frete
+  elementKind: E
+  parent: G04
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G22
+  path: Envio/det/detItem/prod/vSeg
+  tag: vSeg
+  description: Valor Total do Seguro
+  elementKind: E
+  parent: G04
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G23
+  path: Envio/det/detItem/prod/vDesc
+  tag: vDesc
+  description: Valor do Desconto
+  elementKind: E
+  parent: G04
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G24
+  path: Envio/det/detItem/prod/vOutro_item
+  tag: vOutro_item
+  description: Outras despesas acessórias
+  elementKind: E
+  parent: G04
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G25
+  path: Envio/det/detItem/prod/indTot
+  tag: indTot
+  description: Indica se valor do Item (vProd) entra no valor total da NF-e (vProd)
+  elementKind: E
+  parent: G04
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G26
+  path: Envio/det/detItem/prod/nTipoItem
+  tag: nTipoItem
+  description: Número do tipo do Item
+  elementKind: E
+  parent: G04
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: G27
+  path: Envio/det/detItem/prod/dProd
+  tag: dProd
+  description: Destaque de Produtos Perigosos
+  elementKind: E
+  parent: G04
+  type: N (1)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G28
+  path: Envio/det/detItem/prod/xPed_item
+  tag: xPed_item
+  description: Número do Pedido de Compra
+  elementKind: E
+  parent: G04
+  type: V (15)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G29
+  path: Envio/det/detItem/prod/nItemPed
+  tag: nItemPed
+  description: Item do Pedido de Compra
+  elementKind: E
+  parent: G04
+  type: V (6)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G30
+  path: Envio/det/detItem/prod/nFCI
+  tag: nFCI
+  description: Ficha de Conteúdo de Importação
+  elementKind: E
+  parent: G04
+  type: C (36)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G31
+  path: Envio/det/detItem/prod/nRECOPI
+  tag: nRECOPI
+  description: Número do RECOPI
+  elementKind: E
+  parent: G04
+  type: V (20)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: G32
+  path: Envio/det/detItem/prod/CEST
+  tag: CEST
+  description: Código CEST
+  elementKind: E
+  parent: G04
+  type: N (7)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: G33
+  path: Envio/det/detItem/prod/indEscala
+  tag: indEscala
+  description: Indicador de escala relevante
+  elementKind: E
+  parent: G04
+  type: V (1)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: G34
+  path: Envio/det/detItem/prod/CNPJFab
+  tag: CNPJFab
+  description: CNPJ do Fabricante da Mercadoria
+  elementKind: E
+  parent: G04
+  type: N (14)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: G35
+  path: Envio/det/detItem/prod/cBenef
+  tag: cBenef
+  description: Código de Benefício Fiscal na UF aplicado ao item
+  elementKind: E
+  parent: G04
+  type: V (20)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: G36
+  path: Envio/det/detItem/prod/gCred
+  tag: gCred
+  description: Grupo de informações sobre o Crédito Presumido
+  elementKind: G
+  parent: G04
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: G37
+  path: gCredItem/gCredItem
+  tag: gCredItem
+  description: Elemento do grupo de informações sobre o Crédito Presumido
+  elementKind: G
+  parent: G37
+  type: '-'
+  occurrence: 1-4
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: G38
+  path: cCredPresumido/cCredPresumido
+  tag: cCredPresumido
+  description: 'Código de Benefício Fiscal de
+
+    Crédito Presumido na UF aplicado
+
+    ao item'
+  elementKind: E
+  parent: G38
+  type: C (8-10)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: G39
+  path: cCredPresumido/pCredPresumido
+  tag: pCredPresumido
+  description: Percentual do Crédito Presumido
+  elementKind: E
+  parent: G38
+  type: N (3.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: G40
+  path: cCredPresumido/vCredPresumido
+  tag: vCredPresumido
+  description: 'Valor do Crédito Presumido '
+  elementKind: E
+  parent: G38
+  type: N (13.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: Ga01
+  path: Envio/det/detItem/prod/NVEs
+  tag: NVEs
+  description: Tag da Nomenclatura de Valor Aduaneiro e Estatística
+  elementKind: G
+  parent: G04
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ga02
+  path: Envio/det/detItem/prod/NVEs/NVEsItem
+  tag: NVEsItem
+  description: Elemento do grupo da Nomenclatura de Valor Aduaneiro e Estatística
+  elementKind: G
+  parent: Ga01
+  type: '-'
+  occurrence: 1-8
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Ga03
+  path: Envio/det/detItem/prod/NVEs/NVEsItem/cNVE
+  tag: cNVE
+  description: Nomenclatura de Valor Aduaneiro e Estatística
+  elementKind: E
+  parent: Ga02
+  type: V (8)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb01
+  path: Envio/det/detItem/prod/detDI
+  tag: detDI
+  description: Tag da Declaração de Importação
+  elementKind: G
+  parent: G04
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Gb02
+  path: Envio/det/detItem/prod/detDI/detDIItem
+  tag: detDIItem
+  description: Elemento do grupo de declaração de Importação
+  elementKind: G
+  parent: Gb01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb03
+  path: Envio/det/detItem/prod/detDI/detDIItem/nDI
+  tag: nDI
+  description: Número do Documento de Importação (DI, DSI, DIRE, DUImp)
+  elementKind: E
+  parent: Gb02
+  type: V (1-15)
+  occurrence: 1-1
+  required: S
+  version: 2.41.3
+  model: '55'
+- id: Gb04
+  path: Envio/det/detItem/prod/detDI/detDIItem/dDi
+  tag: dDi
+  description: Data de Registro da DI/DSI/DA
+  elementKind: E
+  parent: Gb02
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb05
+  path: Envio/det/detItem/prod/detDI/detDIItem/xLocDesemb
+  tag: xLocDesemb
+  description: Local de desembaraço
+  elementKind: E
+  parent: Gb02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb06
+  path: Envio/det/detItem/prod/detDI/detDIItem/UFDesemb
+  tag: UFDesemb
+  description: Sigla da UF onde ocorreu o Desembaraço Aduaneiro
+  elementKind: E
+  parent: Gb02
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb07
+  path: Envio/det/detItem/prod/detDI/detDIItem/cExportador
+  tag: cExportador
+  description: Código do exportador
+  elementKind: E
+  parent: Gb02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb08
+  path: Envio/det/detItem/prod/detDI/detDIItem/dDesemb
+  tag: dDesemb
+  description: Data do Desembaraço Aduaneiro
+  elementKind: E
+  parent: Gb02
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb09
+  path: Envio/det/detItem/prod/detDI/detDIItem/tpViaTransp
+  tag: tpViaTransp
+  description: Via de transporte internacional informada na Declaração de Importação (DI) ou na Declaração Única de Importação (DUImp)
+  elementKind: E
+  parent: Gb02
+  type: N (2)
+  occurrence: 1-1
+  required: S
+  version: 2.41.3
+  model: '55'
+- id: Gb10
+  path: Envio/det/detItem/prod/detDI/detDIItem/vAFRMM
+  tag: vAFRMM
+  description: Valor da AFRMM - Adicional ao Frete para Renovação da Marinha Mercante
+  elementKind: E
+  parent: Gb02
+  type: N (13,2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Gb11
+  path: Envio/det/detItem/prod/detDI/detDIItem/tpIntermedio
+  tag: tpIntermedio
+  description: Forma de importação quanto a intermediação
+  elementKind: E
+  parent: Gb02
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gb12
+  path: Envio/det/detItem/prod/detDI/detDIItem/CNPJ_adq
+  tag: CNPJ_adq
+  description: CNPJ do adquirinte ou do encomendante
+  elementKind: E
+  parent: Gb02
+  type: N (14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Gb13
+  path: Envio/det/detItem/prod/detDI/detDIItem/CPF_adq
+  tag: CPF_adq
+  description: 'CPF do adquirente ou do encomendante '
+  elementKind: E
+  parent: Gb02
+  type: N (11)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: Gb14
+  path: Envio/det/detItem/prod/detDI/detDIItem/UFTerceiro
+  tag: UFTerceiro
+  description: Sigla da UF do adquirinte ou do encomendante
+  elementKind: E
+  parent: Gb02
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Gc01
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes
+  tag: detAdicoes
+  description: Adições e/ou itens
+  elementKind: G
+  parent: Gb02
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: Gc02
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes/detAdicoesItem
+  tag: detAdicoesItem
+  description: Elemento do grupo de adições da NF-e
+  elementKind: G
+  parent: Gc01
+  type: '-'
+  occurrence: 1-999
+  required: S
+  version: 2.41.3
+  model: '55'
+- id: Gc03
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes/detAdicoesItem/nAdicao
+  tag: nAdicao
+  description: Numero da adição do DI
+  elementKind: E
+  parent: Gc02
+  type: N (1-3)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: Gc04
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes/detAdicoesItem/nSeqAdic
+  tag: nSeqAdic
+  description: Numero sequencial do item
+  elementKind: E
+  parent: Gc02
+  type: N (1-5)
+  occurrence: 1-1
+  required: S
+  version: 2.41.3
+  model: '55'
+- id: Gc05
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes/detAdicoesItem/cFabricante
+  tag: cFabricante
+  description: Código do fabricante estrangeiro
+  elementKind: E
+  parent: Gc02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Gc06
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes/detAdicoesItem/vDescDI
+  tag: vDescDI
+  description: Valor do Desconto do Item
+  elementKind: E
+  parent: Gc02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: Gc07
+  path: Envio/det/detItem/prod/detDI/detDIItem/detAdicoes/detAdicoesItem/nDrawAdicoes
+  tag: nDrawAdicoes
+  description: Número do ato concessório de Drawback
+  elementKind: E
+  parent: Gc02
+  type: C (1-20)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: H01
+  path: Envio/det/detItem/prod/detExport
+  tag: detExport
+  description: TAG de Grupo de informações de exportação para o item
+  elementKind: G
+  parent: G04
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: H02
+  path: Envio/det/detItem/prod/detExport/detExportItem
+  tag: detExportItem
+  description: TAG de Grupo de detalhamento das informações de exportação para o item
+  elementKind: G
+  parent: H01
+  type: ''
+  occurrence: 1-500
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: H03
+  path: Envio/det/detItem/prod/detExport/detExportItem/nDraw
+  tag: nDraw
+  description: Número do ato concessório de Drawback
+  elementKind: E
+  parent: H02
+  type: C (1-20)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: Ha01
+  path: Envio/det/detItem/prod/detExport/detExportItem/exportInd
+  tag: exportInd
+  description: TAG de Grupo sobre exportação indireta
+  elementKind: G
+  parent: H02
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ha02
+  path: Envio/det/detItem/prod/detExport/detExportItem/exportInd/nRE
+  tag: nRE
+  description: Número do registro de exportação
+  elementKind: E
+  parent: Ha01
+  type: N (12)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Ha03
+  path: Envio/det/detItem/prod/detExport/detExportItem/exportInd/chNFe
+  tag: chNFe
+  description: Chave de acesso da NF-e recebida para exportação
+  elementKind: E
+  parent: Ha01
+  type: C (44)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Ha04
+  path: Envio/det/detItem/prod/detExport/detExportItem/exportInd/qExport
+  tag: qExport
+  description: Quantidade do item realmente exportado
+  elementKind: E
+  parent: Ha01
+  type: N (11,4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I01
+  path: Envio/det/detItem/prod/veicProd
+  tag: veicProd
+  description: TAG de grupo do detalhamento de Veículos novos.
+  elementKind: CG
+  parent: G04
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: I02
+  path: Envio/det/detItem/prod/veicProd/tpOp
+  tag: tpOp
+  description: Tipo da operação
+  elementKind: E
+  parent: I01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I03
+  path: Envio/det/detItem/prod/veicProd/chassi
+  tag: chassi
+  description: Chassi do veículo
+  elementKind: E
+  parent: I01
+  type: V (17)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I04
+  path: Envio/det/detItem/prod/veicProd/cCor
+  tag: cCor
+  description: Cor
+  elementKind: E
+  parent: I01
+  type: V (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I05
+  path: Envio/det/detItem/prod/veicProd/xCor
+  tag: xCor
+  description: Descrição da Cor
+  elementKind: E
+  parent: I01
+  type: V (1-40)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I06
+  path: Envio/det/detItem/prod/veicProd/pot
+  tag: pot
+  description: Potência Motor (CV)
+  elementKind: E
+  parent: I01
+  type: V (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I07
+  path: Envio/det/detItem/prod/veicProd/cilin
+  tag: cilin
+  description: Cilindradas
+  elementKind: E
+  parent: I01
+  type: V (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I08
+  path: Envio/det/detItem/prod/veicProd/PesoL
+  tag: PesoL
+  description: Peso Líquido
+  elementKind: E
+  parent: I01
+  type: V (9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I09
+  path: Envio/det/detItem/prod/veicProd/PesoB
+  tag: PesoB
+  description: Peso Bruto
+  elementKind: E
+  parent: I01
+  type: V (9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I10
+  path: Envio/det/detItem/prod/veicProd/nSerie
+  tag: nSerie
+  description: Serial (série)
+  elementKind: E
+  parent: I01
+  type: V (9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I11
+  path: Envio/det/detItem/prod/veicProd/tpComb
+  tag: tpComb
+  description: Tipo de combustível
+  elementKind: E
+  parent: I01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I12
+  path: Envio/det/detItem/prod/veicProd/nMotor
+  tag: nMotor
+  description: Número de Motor
+  elementKind: E
+  parent: I01
+  type: V (21)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I13
+  path: Envio/det/detItem/prod/veicProd/CMT
+  tag: CMT
+  description: CMT
+  elementKind: E
+  parent: I01
+  type: V (9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I14
+  path: Envio/det/detItem/prod/veicProd/dist
+  tag: dist
+  description: Distância entre eixos
+  elementKind: E
+  parent: I01
+  type: V (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I15
+  path: Envio/det/detItem/prod/veicProd/anoMod
+  tag: anoMod
+  description: Ano Modelo de Fabricação
+  elementKind: E
+  parent: I01
+  type: N (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I16
+  path: Envio/det/detItem/prod/veicProd/anoFab
+  tag: anoFab
+  description: Ano de Fabricação
+  elementKind: E
+  parent: I01
+  type: N (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I17
+  path: Envio/det/detItem/prod/veicProd/tpPint
+  tag: tpPint
+  description: Tipo de Pintura
+  elementKind: E
+  parent: I01
+  type: C (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I18
+  path: Envio/det/detItem/prod/veicProd/tpVeic
+  tag: tpVeic
+  description: Tipo de Veículo
+  elementKind: E
+  parent: I01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I19
+  path: Envio/det/detItem/prod/veicProd/espVeic
+  tag: espVeic
+  description: Espécie de Veículo
+  elementKind: E
+  parent: I01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I20
+  path: Envio/det/detItem/prod/veicProd/VIN
+  tag: VIN
+  description: Condição do VIN (Vehicle Identification Number)
+  elementKind: E
+  parent: I01
+  type: C (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I21
+  path: Envio/det/detItem/prod/veicProd/condVeic
+  tag: condVeic
+  description: Condição do Veículo
+  elementKind: E
+  parent: I01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I22
+  path: Envio/det/detItem/prod/veicProd/cMod
+  tag: cMod
+  description: Código Marca Modelo
+  elementKind: E
+  parent: I01
+  type: N (6)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I23
+  path: Envio/det/detItem/prod/veicProd/cCorDENATRAN
+  tag: cCorDENATRAN
+  description: Código da Cor
+  elementKind: E
+  parent: I01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I24
+  path: Envio/det/detItem/prod/veicProd/lota
+  tag: lota
+  description: Capacidade máxima de lotação
+  elementKind: E
+  parent: I01
+  type: N (1-3)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: I25
+  path: Envio/det/detItem/prod/veicProd/tpRest
+  tag: tpRest
+  description: Restrição
+  elementKind: E
+  parent: I01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: J01
+  path: Envio/det/detItem/prod/med
+  tag: med
+  description: TAG de grupo do detalhamento de Medicamentos e de matérias- primas farmacêuticas
+  elementKind: CG
+  parent: G04
+  type: '-'
+  occurrence: 1-500
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: J02
+  path: Envio/det/detItem/prod/med/medItem
+  tag: medItem
+  description: Elemento do grupo de medicamentos
+  elementKind: G
+  parent: J01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: J03
+  path: Envio/det/detItem/prod/med/medItem/vPMC
+  tag: vPMC
+  description: Preço máximo consumidor
+  elementKind: E
+  parent: J02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: J04
+  path: Envio/det/detItem/prod/med/medItem/cProdANVISA
+  tag: cProdANVISA
+  description: Código de Produto da ANVISA
+  elementKind: E
+  parent: J02
+  type: V (13)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: J05
+  path: Envio/det/detItem/prod/med/medItem/xMotivoIsencao
+  tag: xMotivoIsencao
+  description: Motivo da isenção da ANVISA
+  elementKind: E
+  parent: J02
+  type: V (255)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: '55'
+- id: L01
+  path: Envio/det/detItem/prod/arma
+  tag: arma
+  description: TAG de grupo do detalhamento de Armamento
+  elementKind: CG
+  parent: G04
+  type: '-'
+  occurrence: 1-500
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: L02
+  path: Envio/det/detItem/prod/arma/armaItem
+  tag: armaItem
+  description: Elemento do grupo de armamentos
+  elementKind: G
+  parent: L01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: L03
+  path: Envio/det/detItem/prod/arma/armaItem/tpArma
+  tag: tpArma
+  description: Indicador do tipo de arma de fogo
+  elementKind: E
+  parent: L02
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: L04
+  path: Envio/det/detItem/prod/arma/armaItem/nSerie_arma
+  tag: nSerie_arma
+  description: Número de série da arma
+  elementKind: E
+  parent: L02
+  type: V (1-15)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: L05
+  path: Envio/det/detItem/prod/arma/armaItem/nCano
+  tag: nCano
+  description: Número de série do cano
+  elementKind: E
+  parent: L02
+  type: V (1-15)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: L06
+  path: Envio/det/detItem/prod/arma/armaItem/descr
+  tag: descr
+  description: Descrição completa da arma
+  elementKind: E
+  parent: L02
+  type: V (1-256)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: M01
+  path: Envio/det/detItem/prod/comb
+  tag: comb
+  description: TAG de grupo de informações específicas para combustíveis líquidos e lubrificantes
+  elementKind: CG
+  parent: G04
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: M02
+  path: Envio/det/detItem/prod/comb/cProdANP
+  tag: cProdANP
+  description: Código de produto da ANP
+  elementKind: E
+  parent: M01
+  type: N (9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: M03
+  path: Envio/det/detItem/prod/comb/CODIF
+  tag: CODIF
+  description: Código de autorização / registro do CODIF
+  elementKind: E
+  parent: M01
+  type: V (0-21)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: M04
+  path: Envio/det/detItem/prod/comb/qTemp
+  tag: qTemp
+  description: Quantidade de combustível faturada à temperatura ambiente.
+  elementKind: E
+  parent: M01
+  type: N (16.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: M05
+  path: Envio/det/detItem/prod/comb/UFcons
+  tag: UFcons
+  description: Sigla da UF de consumo
+  elementKind: E
+  parent: M01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: M06
+  path: Envio/det/detItem/prod/comb/descANP
+  tag: descANP
+  description: Descrição do produto conforme ANP
+  elementKind: E
+  parent: M01
+  type: V (95)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: M07
+  path: Envio/det/detItem/prod/comb/pGLP
+  tag: pGLP
+  description: Percentual do GLP derivado do petróleo no produto GLP (cProdANP=210203001)
+  elementKind: E
+  parent: M01
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: M08
+  path: Envio/det/detItem/prod/comb/pGNn
+  tag: pGNn
+  description: Percentual de Gás Natural Nacional - GLGNn para o produto GLP (cProdANP=210203001)
+  elementKind: E
+  parent: M01
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: M09
+  path: Envio/det/detItem/prod/comb/pGNi
+  tag: pGNi
+  description: Percentual de Gás Natural Importado - GLGNi para o produto GLP (cProdANP=210203001)
+  elementKind: E
+  parent: M01
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: M10
+  path: Envio/det/detItem/prod/comb/vPart
+  tag: vPart
+  description: Valor de partida (cProdANP=210203001)
+  elementKind: E
+  parent: M01
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: M11
+  path: Envio/det/detItem/prod/comb/pBio
+  tag: pBio
+  description: Percentual do índice de mistura do Biodiesel (B100) no Óleo Diesel B ou do Etanol Anidro na Gasolina C instituído pelo órgão regulamentador
+  elementKind: E
+  parent: M01
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: Ma01
+  path: Envio/det/detItem/prod/comb/CIDE
+  tag: CIDE
+  description: TAG de grupo da CIDE
+  elementKind: G
+  parent: M01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ma02
+  path: Envio/det/detItem/prod/comb/CIDE/qBCprod
+  tag: qBCprod
+  description: BC da CIDE
+  elementKind: E
+  parent: Ma01
+  type: N (16.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Ma03
+  path: Envio/det/detItem/prod/comb/CIDE/vAliqProd
+  tag: vAliqProd
+  description: Valor da alíquota da CIDE
+  elementKind: E
+  parent: Ma01
+  type: N (15.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Ma04
+  path: Envio/det/detItem/prod/comb/CIDE/vCIDE
+  tag: vCIDE
+  description: Valor da CIDE
+  elementKind: E
+  parent: Ma01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Mb01
+  path: Envio/det/detItem/prod/comb/Encerrante
+  tag: Encerrante
+  description: TAG de grupo de Encerrante
+  elementKind: G
+  parent: M01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Mb02
+  path: Envio/det/detItem/prod/comb/Encerrante/nBico
+  tag: nBico
+  description: Número de identificação do bico utilizado no abastecimento
+  elementKind: E
+  parent: Mb01
+  type: N (1-3)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Mb03
+  path: Envio/det/detItem/prod/comb/Encerrante/nBomba
+  tag: nBomba
+  description: Número de identificação da bomba ao qual o bico está interligado
+  elementKind: E
+  parent: Mb01
+  type: N (1-3)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Mb04
+  path: Envio/det/detItem/prod/comb/Encerrante/nTanque
+  tag: nTanque
+  description: Número de identificação do tanque ao qual o bico está interligado
+  elementKind: E
+  parent: Mb01
+  type: N (1-3)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Mb05
+  path: Envio/det/detItem/prod/comb/Encerrante/vEncerranteIni
+  tag: vEncerranteIni
+  description: Valor do Encerrante no início do abastecimento
+  elementKind: E
+  parent: Mb01
+  type: N (15.3)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Mb06
+  path: Envio/det/detItem/prod/comb/Encerrante/vEncerranteFim
+  tag: vEncerranteFim
+  description: Valor do Encerrante no final do abastecimento
+  elementKind: E
+  parent: Mb01
+  type: N (15.3)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Mc01
+  path: Envio/det/detItem/prod/comb/origComb
+  tag: origComb
+  description: Grupo indicador da origem do combustível
+  elementKind: G
+  parent: M01
+  type: '-'
+  occurrence: 0-30
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: Mc02
+  path: Envio/det/detItem/prod/comb/origComb/origCombItem
+  tag: origCombItem
+  description: Elemento do grupo de origem do combustível
+  elementKind: G
+  parent: Mc01
+  type: '-'
+  occurrence: 0-30
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: Mc03
+  path: Envio/det/detItem/prod/comb/origComb/indImport
+  tag: indImport
+  description: Indicador de importação
+  elementKind: E
+  parent: Mc01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: Mc04
+  path: Envio/det/detItem/prod/comb/origComb/cUFOrig
+  tag: cUFOrig
+  description: Código da UF
+  elementKind: E
+  parent: Mc01
+  type: N (2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: Mc05
+  path: Envio/det/detItem/prod/comb/origComb/pOrig
+  tag: pOrig
+  description: Percentual originário para a UF
+  elementKind: E
+  parent: Mc01
+  type: N (8.4)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: N01
+  path: Envio/det/detItem/prod/Rastro
+  tag: Rastro
+  description: TAG do grupo das informações de rastreabilidade do produto
+  elementKind: G
+  parent: G04
+  type: '-'
+  occurrence: 0-500
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: N02
+  path: Envio/det/detItem/prod/Rastro/RastroItem
+  tag: RastroItem
+  description: Elemento do grupo de rastreabilidade
+  elementKind: G
+  parent: N01
+  type: '-'
+  occurrence: 0-500
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: N03
+  path: Envio/det/detItem/prod/Rastro/RastroItem/nLote
+  tag: nLote
+  description: Número do lote do produto
+  elementKind: E
+  parent: N02
+  type: V (20)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: N04
+  path: Envio/det/detItem/prod/Rastro/RastroItem/qLote
+  tag: qLote
+  description: Quantidade de produto no Lote
+  elementKind: E
+  parent: N02
+  type: N (11.3)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: N05
+  path: Envio/det/detItem/prod/Rastro/RastroItem/dFab
+  tag: dFab
+  description: Data de fabricação/Produção
+  elementKind: E
+  parent: N02
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: N06
+  path: Envio/det/detItem/prod/Rastro/RastroItem/dVal
+  tag: dVal
+  description: Data de validade
+  elementKind: E
+  parent: N02
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: '55'
+- id: N07
+  path: Envio/det/detItem/prod/Rastro/RastroItem/cAgreg
+  tag: cAgreg
+  description: Código da Agregação
+  elementKind: E
+  parent: N02
+  type: C (1-20)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: O01
+  path: Envio/det/detItem/imposto
+  tag: imposto
+  description: TAG de grupo de Tributos incidentes no Produto ou Serviço
+  elementKind: G
+  parent: G02
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: O02
+  path: Envio/det/detItem/imposto/vTotTrib
+  tag: vTotTrib
+  description: Valor aproximado total por item de tributos federais, estaduais e municipais.
+  elementKind: E
+  parent: O01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O03
+  path: Envio/det/detItem/imposto/ICMS
+  tag: ICMS
+  description: TAG de grupo do ICMS da Operação própria e ST
+  elementKind: CG
+  parent: O01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: O04
+  path: Envio/det/detItem/imposto/ICMS/orig
+  tag: orig
+  description: Origem da mercadoria
+  elementKind: E
+  parent: O03
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: O05
+  path: Envio/det/detItem/imposto/ICMS/CST
+  tag: CST
+  description: Tributação do ICMS
+  elementKind: E
+  parent: O03
+  type: V (4)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O06
+  path: Envio/det/detItem/imposto/ICMS/modBC
+  tag: modBC
+  description: Modalidade de determinação da BC do ICMS
+  elementKind: E
+  parent: O03
+  type: N (1)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O07
+  path: Envio/det/detItem/imposto/ICMS/vBC
+  tag: vBC
+  description: Valor da BC do ICMS
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O08
+  path: Envio/det/detItem/imposto/ICMS/pICMS
+  tag: pICMS
+  description: Alíquota do Imposto
+  elementKind: E
+  parent: O03
+  type: N (5.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O09
+  path: Envio/det/detItem/imposto/ICMS/vICMS_icms
+  tag: vICMS_icms
+  description: Valor do ICMS
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O10
+  path: Envio/det/detItem/imposto/ICMS/modBCST
+  tag: modBCST
+  description: Modalidade de determinação da BC do ICMS ST
+  elementKind: E
+  parent: O03
+  type: N (1)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O11
+  path: Envio/det/detItem/imposto/ICMS/pMVAST
+  tag: pMVAST
+  description: Percentual da margem de valor Adicionado do ICMS ST
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O12
+  path: Envio/det/detItem/imposto/ICMS/pRedBCST
+  tag: pRedBCST
+  description: Percentual da Redução de BC do ICMS ST
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O13
+  path: Envio/det/detItem/imposto/ICMS/vBCST
+  tag: vBCST
+  description: Valor da BC do ICMS ST
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O14
+  path: Envio/det/detItem/imposto/ICMS/vBCSTRet
+  tag: vBCSTRet
+  description: Valor da BC do ICMS ST retido
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O15
+  path: Envio/det/detItem/imposto/ICMS/pICMSST
+  tag: pICMSST
+  description: Alíquota do imposto do ICMS ST
+  elementKind: E
+  parent: O03
+  type: N (5.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O16
+  path: Envio/det/detItem/imposto/ICMS/vICMSST_icms
+  tag: vICMSST_icms
+  description: Valor do ICMS ST
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O17
+  path: Envio/det/detItem/imposto/ICMS/vICMSSTRet
+  tag: vICMSSTRet
+  description: Valor do ICMS ST retido
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O18
+  path: Envio/det/detItem/imposto/ICMS/pRedBC
+  tag: pRedBC
+  description: Percentual da Redução de BC
+  elementKind: E
+  parent: O03
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O19
+  path: Envio/det/detItem/imposto/ICMS/motDesICMS
+  tag: motDesICMS
+  description: Motivo da desoneração do ICMS
+  elementKind: E
+  parent: O03
+  type: N (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O20
+  path: Envio/det/detItem/imposto/ICMS/vICMSDeson
+  tag: vICMSDeson
+  description: Valor do ICMS desonerado
+  elementKind: E
+  parent: O03
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O21
+  path: Envio/det/detItem/imposto/ICMS/vICMSOp
+  tag: vICMSOp
+  description: Valor do ICMS da Operação
+  elementKind: E
+  parent: O03
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O22
+  path: Envio/det/detItem/imposto/ICMS/pDif
+  tag: pDif
+  description: Percentual do Diferimento
+  elementKind: E
+  parent: O03
+  type: N (3.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O23
+  path: Envio/det/detItem/imposto/ICMS/vICMSDif
+  tag: vICMSDif
+  description: Valor do ICMS diferido
+  elementKind: E
+  parent: O03
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O24
+  path: Envio/det/detItem/imposto/ICMS/pBCOp
+  tag: pBCOp
+  description: Percentual da BC operação própria
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O25
+  path: Envio/det/detItem/imposto/ICMS/UFST
+  tag: UFST
+  description: UF para qual é devido o ICMS ST
+  elementKind: E
+  parent: O03
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O26
+  path: Envio/det/detItem/imposto/ICMS/vBCSTDest
+  tag: vBCSTDest
+  description: Valor da BC do ICMS ST da UF destino
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O27
+  path: Envio/det/detItem/imposto/ICMS/vICMSSTDest_icms
+  tag: vICMSSTDest_icms
+  description: Valor do ICMS ST da UF destino
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O28
+  path: Envio/det/detItem/imposto/ICMS/pCredSN
+  tag: pCredSN
+  description: Alíquota aplicável de cálculo do crédito (Simples Nacional).
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O29
+  path: Envio/det/detItem/imposto/ICMS/vCredICMSSN
+  tag: vCredICMSSN
+  description: Valor crédito do ICMS que pode ser aproveitado nos termos do art. 23 da LC 123 (Simples Nacional)
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: O30
+  path: Envio/det/detItem/imposto/ICMS/pFCP
+  tag: pFCP
+  description: Percentual do Fundo de Combate à Pobreza (FCP)
+  elementKind: E
+  parent: O03
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O31
+  path: Envio/det/detItem/imposto/ICMS/vFCP
+  tag: vFCP
+  description: Valor do Fundo de Combate à Pobreza (FCP)
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O32
+  path: Envio/det/detItem/imposto/ICMS/vBCFCP
+  tag: vBCFCP
+  description: Valor da Base de Cálculo do Fundo de Combate à Pobreza (FCP)
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O33
+  path: Envio/det/detItem/imposto/ICMS/vBCFCPST
+  tag: vBCFCPST
+  description: Valor da Base de Cálculo do FCP retido por Substituição Tributária
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O34
+  path: Envio/det/detItem/imposto/ICMS/pFCPST
+  tag: pFCPST
+  description: Percentual do FCP retido por Substituição Tributária
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O35
+  path: Envio/det/detItem/imposto/ICMS/vFCPST
+  tag: vFCPST
+  description: Valor do FCP retido por Substituição Tributária
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O36
+  path: Envio/det/detItem/imposto/ICMS/pST
+  tag: pST
+  description: Alíquota suportada pelo Consumidor Final
+  elementKind: E
+  parent: O03
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O37
+  path: Envio/det/detItem/imposto/ICMS/vICMSSubstituto
+  tag: vICMSSubstituto
+  description: Valor do ICMS próprio do Substituto
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O38
+  path: Envio/det/detItem/imposto/ICMS/vBCFCPSTRet
+  tag: vBCFCPSTRet
+  description: Valor da Base de Cálculo do FCP retido anteriormente por ST
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O39
+  path: Envio/det/detItem/imposto/ICMS/pFCPSTRet
+  tag: pFCPSTRet
+  description: Percentual do FCP retido anteriormente por Substituição Tributária
+  elementKind: E
+  parent: O03
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O40
+  path: Envio/det/detItem/imposto/ICMS/vFCPSTRet
+  tag: vFCPSTRet
+  description: Valor do FCP retido por Substituição Tributária
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O41
+  path: Envio/det/detItem/imposto/ICMS/GerarICMSST
+  tag: GerarICMSST
+  description: "Indica se irá gerar o grupo ICMS ST - Grupo de Repasse de ICMS ST retido anteriormente em operações interestaduais com repasses através \ndo Substituto\
+    \ Tributário"
+  elementKind: E
+  parent: O03
+  type: C (1)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O42
+  path: Envio/det/detItem/imposto/ICMS/pRedBCEfet
+  tag: pRedBCEfet
+  description: Percentual de redução da base de cálculo efetiva
+  elementKind: E
+  parent: O03
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O43
+  path: Envio/det/detItem/imposto/ICMS/vBCEfet
+  tag: vBCEfet
+  description: Valor da base de cálculo efetiva
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O44
+  path: Envio/det/detItem/imposto/ICMS/pICMSEfet
+  tag: pICMSEfet
+  description: Alíquota do ICMS efetiva
+  elementKind: E
+  parent: O03
+  type: N (8.4)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O45
+  path: Envio/det/detItem/imposto/ICMS/vICMSEfet
+  tag: vICMSEfet
+  description: Valor do ICMS efetivo
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: 55/65
+- id: O46
+  path: Envio/det/detItem/imposto/ICMS/DigitacaoDescICMSDeson
+  tag: DigitacaoDescICMSDeson
+  description: Desconto do ICMS Desonerado no total da nota
+  elementKind: E
+  parent: O03
+  type: boolen
+  occurrence: 0-1
+  required: N
+  version: 2.52.0
+  model: 55/65
+- id: O47
+  path: Envio/det/detItem/imposto/ICMS/vICMSSTDeson
+  tag: vICMSSTDeson
+  description: Valor do ICMS- ST desonerado
+  elementKind: E
+  parent: O03
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: O48
+  path: Envio/det/detItem/imposto/ICMS/motDesICMSST
+  tag: motDesICMSST
+  description: Motivo da desoneração do ICMS- ST
+  elementKind: E
+  parent: O03
+  type: N (2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: O49
+  path: Envio/det/detItem/imposto/ICMS/pFCPDif
+  tag: pFCPDif
+  description: Percentual do diferimento do ICMS relativo ao Fundo de Combate à Pobreza (FCP)
+  elementKind: E
+  parent: O03
+  type: N (3.4)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: O50
+  path: Envio/det/detItem/imposto/ICMS/vFCPDif
+  tag: vFCPDif
+  description: Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) diferido
+  elementKind: E
+  parent: O03
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: O51
+  path: Envio/det/detItem/imposto/ICMS/vFCPEfet
+  tag: vFCPEfet
+  description: Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) realmente devido
+  elementKind: E
+  parent: O03
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: O52
+  path: Envio/det/detItem/imposto/ICMS/qBCMono
+  tag: qBCMono
+  description: Quantidade tributada
+  elementKind: E
+  parent: O03
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O53
+  path: Envio/det/detItem/imposto/ICMS/adRemICMS
+  tag: adRemICMS
+  description: Alíquota ad rem do imposto
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O54
+  path: Envio/det/detItem/imposto/ICMS/vICMSMono
+  tag: vICMSMono
+  description: Valor do ICMS próprio
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O55
+  path: Envio/det/detItem/imposto/ICMS/qBCMonoReten
+  tag: qBCMonoReten
+  description: Quantidade tributada sujeita a retenção
+  elementKind: E
+  parent: O03
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O56
+  path: Envio/det/detItem/imposto/ICMS/adRemICMSReten
+  tag: adRemICMSReten
+  description: Alíquota ad rem do imposto com retenção
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O57
+  path: Envio/det/detItem/imposto/ICMS/vICMSMonoReten
+  tag: vICMSMonoReten
+  description: Valor do ICMS com retenção
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O58
+  path: Envio/det/detItem/imposto/ICMS/pRedAdRem
+  tag: pRedAdRem
+  description: Percentual de redução do valor da alíquota adrem do ICMS
+  elementKind: E
+  parent: O03
+  type: N (3.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O59
+  path: Envio/det/detItem/imposto/ICMS/motRedAdRem
+  tag: motRedAdRem
+  description: Motivo da redução do adrem
+  elementKind: E
+  parent: O03
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O62
+  path: Envio/det/detItem/imposto/ICMS/vICMSMonoDif
+  tag: vICMSMonoDif
+  description: Valor do ICMS diferido
+  elementKind: E
+  parent: O03
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O63
+  path: Envio/det/detItem/imposto/ICMS/qBCMonoRet
+  tag: qBCMonoRet
+  description: Quantidade tributada retida anteriormente
+  elementKind: E
+  parent: O03
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O64
+  path: Envio/det/detItem/imposto/ICMS/adRemICMSRet
+  tag: adRemICMSRet
+  description: Alíquota ad rem do imposto retido anteriormente
+  elementKind: E
+  parent: O03
+  type: N (5.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O65
+  path: Envio/det/detItem/imposto/ICMS/vICMSMonoRet
+  tag: vICMSMonoRet
+  description: Valor do ICMS retido anteriormente
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: O66
+  path: Envio/det/detItem/imposto/ICMS/vICMSMonoOp
+  tag: vICMSMonoOp
+  description: 'Valor do ICMS da operação '
+  elementKind: E
+  parent: O03
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O67
+  path: Envio/det/detItem/imposto/ICMS/indDeduzDeson
+  tag: indDeduzDeson
+  description: Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd
+  elementKind: E
+  parent: O03
+  type: C (1)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: O68
+  path: Envio/det/detItem/imposto/ICMS/cBenefRBC
+  tag: cBenefRBC
+  description: 'Código de Benefício Fiscal na UF
+
+    aplicado ao item quando houver
+
+    RBC.'
+  elementKind: E
+  parent: O03
+  type: C (8-10)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: P01
+  path: Envio/det/detItem/imposto/IPI
+  tag: IPI
+  description: TAG de grupo do IPI
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: P02
+  path: Envio/det/detItem/imposto/IPI/CNPJProd
+  tag: CNPJProd
+  description: CNPJ do produtor da mercadoria, quando diferente do emitente. Somente para os casos de exportação direta ou indireta.
+  elementKind: E
+  parent: P01
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: P03
+  path: Envio/det/detItem/imposto/IPI/cSelo
+  tag: cSelo
+  description: Código do selo de controle IPI
+  elementKind: E
+  parent: P01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: P04
+  path: Envio/det/detItem/imposto/IPI/qSelo
+  tag: qSelo
+  description: Quantidade de selo de controle
+  elementKind: E
+  parent: P01
+  type: N (1-12)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: P05
+  path: Envio/det/detItem/imposto/IPI/cEnq
+  tag: cEnq
+  description: Código de Enquadramento Legal do IPI
+  elementKind: E
+  parent: P01
+  type: C (1-3)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: Pa01
+  path: Envio/det/detItem/imposto/IPI/CSTIPI
+  tag: CSTIPI
+  description: Grupo de Classificação Fiscal do IPI
+  elementKind: G
+  parent: P01
+  type: ''
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Pa02
+  path: Envio/det/detItem/imposto/IPI/CSTIPI/CST_IPI
+  tag: CST_IPI
+  description: Código da situação tributária do IPI
+  elementKind: E
+  parent: Pa01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Pa03
+  path: Envio/det/detItem/imposto/IPI/CSTIPI/vBC_IPI
+  tag: vBC_IPI
+  description: Valor da BC do IPI
+  elementKind: E
+  parent: Pa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Pa04
+  path: Envio/det/detItem/imposto/IPI/CSTIPI/qUnid_IPI
+  tag: qUnid_IPI
+  description: Quantidade total na unidade padrão para tributação (somente para os produtos tributados por unidade)
+  elementKind: E
+  parent: Pa01
+  type: N (16.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Pa05
+  path: Envio/det/detItem/imposto/IPI/CSTIPI/vUnid_IPI
+  tag: vUnid_IPI
+  description: Valor por Unidade Tributável
+  elementKind: E
+  parent: Pa01
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Pa06
+  path: Envio/det/detItem/imposto/IPI/CSTIPI/pIPI
+  tag: pIPI
+  description: Alíquota do IPI
+  elementKind: E
+  parent: Pa01
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Pa07
+  path: Envio/det/detItem/imposto/IPI/CSTIPI/vIPI
+  tag: vIPI
+  description: Valor do IPI
+  elementKind: E
+  parent: Pa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Q01
+  path: Envio/det/detItem/imposto/II
+  tag: II
+  description: II Imposto de importação
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Q02
+  path: Envio/det/detItem/imposto/II/vBC_imp
+  tag: vBC_imp
+  description: Valor da BC do Imposto de Importação
+  elementKind: E
+  parent: Q01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Q03
+  path: Envio/det/detItem/imposto/II/vDespAdu
+  tag: vDespAdu
+  description: Valor das despesas aduaneiras
+  elementKind: E
+  parent: Q01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Q04
+  path: Envio/det/detItem/imposto/II/vII
+  tag: vII
+  description: Valor do Imposto de Importação
+  elementKind: E
+  parent: Q01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Q05
+  path: Envio/det/detItem/imposto/II/vIOF
+  tag: vIOF
+  description: Valor do Imposto sobre Operações Financeiras
+  elementKind: E
+  parent: Q01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: R01
+  path: Envio/det/detItem/imposto/PIS
+  tag: PIS
+  description: TAG de grupo do PIS
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: R02
+  path: Envio/det/detItem/imposto/PIS/CST_pis
+  tag: CST_pis
+  description: Código de Situação Tributária do PIS
+  elementKind: E
+  parent: R01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: R03
+  path: Envio/det/detItem/imposto/PIS/vBC_pis
+  tag: vBC_pis
+  description: Valor da Base de Cálculo do PIS
+  elementKind: E
+  parent: R01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: R04
+  path: Envio/det/detItem/imposto/PIS/pPIS
+  tag: pPIS
+  description: Alíquota do PIS (em percentual)
+  elementKind: E
+  parent: R01
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: R05
+  path: Envio/det/detItem/imposto/PIS/vPIS
+  tag: vPIS
+  description: Valor do PIS
+  elementKind: E
+  parent: R01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: R06
+  path: Envio/det/detItem/imposto/PIS/qBCprod_pis
+  tag: qBCprod_pis
+  description: Quantidade Vendida
+  elementKind: E
+  parent: R01
+  type: N (16.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: R07
+  path: Envio/det/detItem/imposto/PIS/vAliqProd_pis
+  tag: vAliqProd_pis
+  description: Alíquota do PIS (em reais)
+  elementKind: E
+  parent: R01
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra01
+  path: Envio/det/detItem/imposto/PISST
+  tag: PISST
+  description: TAG do grupo de PIS Substituição Tributária
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra02
+  path: Envio/det/detItem/imposto/PISST/vBC_PIS_ST
+  tag: vBC_PIS_ST
+  description: Valor da Base de Cálculo do PIS
+  elementKind: E
+  parent: Ra01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra03
+  path: Envio/det/detItem/imposto/PISST/pPIS_ST
+  tag: pPIS_ST
+  description: Alíquota do PIS (em percentual)
+  elementKind: E
+  parent: Ra01
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra04
+  path: Envio/det/detItem/imposto/PISST/qBCprod_pis_ST
+  tag: qBCprod_pis_ST
+  description: Quantidade Vendida
+  elementKind: E
+  parent: Ra01
+  type: N (16.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra05
+  path: Envio/det/detItem/imposto/PISST/vAliqProd_pis_ST
+  tag: vAliqProd_pis_ST
+  description: Valor do PIS
+  elementKind: E
+  parent: Ra01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra06
+  path: Envio/det/detItem/imposto/PISST/vPIS_ST
+  tag: vPIS_ST
+  description: Valor do PIS
+  elementKind: E
+  parent: Ra01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Ra07
+  path: Envio/det/detItem/imposto/PISST/indSomaPISST
+  tag: indSomaPISST
+  description: Indica se o valor do PISST compõe o valor total da NF-e
+  elementKind: E
+  parent: Ra01
+  type: N (1)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: S01
+  path: Envio/det/detItem/imposto/COFINS
+  tag: COFINS
+  description: TAG de grupo do COFINS
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: S02
+  path: Envio/det/detItem/imposto/COFINS/CST_cofins
+  tag: CST_cofins
+  description: Código de Situação Tributária do COFINS
+  elementKind: E
+  parent: S01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: ''
+- id: S03
+  path: Envio/det/detItem/imposto/COFINS/vBC_cofins
+  tag: vBC_cofins
+  description: Valor da Base de Cálculo da COFINS
+  elementKind: E
+  parent: S01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: S04
+  path: Envio/det/detItem/imposto/COFINS/pCOFINS
+  tag: pCOFINS
+  description: Alíquota da COFINS (em percentual)
+  elementKind: E
+  parent: S01
+  type: N (5.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: S05
+  path: Envio/det/detItem/imposto/COFINS/vCOFINS
+  tag: vCOFINS
+  description: Valor do COFINS
+  elementKind: E
+  parent: S01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: S06
+  path: Envio/det/detItem/imposto/COFINS/qBCProd_cofins
+  tag: qBCProd_cofins
+  description: Quantidade Vendida
+  elementKind: E
+  parent: S01
+  type: N (16.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: S07
+  path: Envio/det/detItem/imposto/COFINS/vAliqProd_cofins
+  tag: vAliqProd_cofins
+  description: Alíquota do COFINS (em reais)
+  elementKind: E
+  parent: S01
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: T01
+  path: Envio/det/detItem/imposto/COFINSST
+  tag: COFINSST
+  description: TAG do grupo de COFINS Substituição Tributária
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: T02
+  path: Envio/det/detItem/imposto/COFINSST/vBC_cofins_ST
+  tag: vBC_cofins_ST
+  description: Valor da Base de Cálculo da COFINS
+  elementKind: E
+  parent: T01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: T03
+  path: Envio/det/detItem/imposto/COFINSST/pCOFINS_cofins_ST
+  tag: pCOFINS_cofins_ST
+  description: Alíquota da COFINS (em percentual)
+  elementKind: E
+  parent: T01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: T04
+  path: Envio/det/detItem/imposto/COFINSST/qBCProd_cofins_ST
+  tag: qBCProd_cofins_ST
+  description: Quantidade Vendida
+  elementKind: E
+  parent: T01
+  type: N (16.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: T05
+  path: Envio/det/detItem/imposto/COFINSST/vAliqProd_cofins_ST
+  tag: vAliqProd_cofins_ST
+  description: Alíquota do COFINS (em reais)
+  elementKind: E
+  parent: T01
+  type: N (15.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: T06
+  path: Envio/det/detItem/imposto/COFINSST/vCOFINS_cofins_ST
+  tag: vCOFINS_cofins_ST
+  description: Valor do COFINS
+  elementKind: E
+  parent: T01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: T07
+  path: Envio/det/detItem/imposto/COFINSST/indSomaCOFINSST
+  tag: indSomaCOFINSST
+  description: 'Indica se o valor da COFINS ST compõe o valor total da NF-
+
+    e'
+  elementKind: E
+  parent: T01
+  type: N (1)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: '55'
+- id: U01
+  path: Envio/det/detItem/imposto/ISSQN
+  tag: ISSQN
+  description: TAG do grupo do ISSQN
+  elementKind: CG
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U02
+  path: Envio/det/detItem/imposto/ISSQN/vBC_issqn
+  tag: vBC_issqn
+  description: Valor da Base de Cálculo do ISSQN
+  elementKind: E
+  parent: U01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U03
+  path: Envio/det/detItem/imposto/ISSQN/vAliq
+  tag: vAliq
+  description: Alíquota do ISSQN
+  elementKind: E
+  parent: U01
+  type: N (5.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U04
+  path: Envio/det/detItem/imposto/ISSQN/vISSQN
+  tag: vISSQN
+  description: Valor do ISSQN
+  elementKind: E
+  parent: U01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U05
+  path: Envio/det/detItem/imposto/ISSQN/cMunFg_issqn
+  tag: cMunFg_issqn
+  description: Código do município de ocorrência do fato gerador do ISSQN
+  elementKind: E
+  parent: U01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U06
+  path: Envio/det/detItem/imposto/ISSQN/cListServ
+  tag: cListServ
+  description: Código da Lista de Serviços
+  elementKind: E
+  parent: U01
+  type: V (5)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U07
+  path: Envio/det/detItem/imposto/ISSQN/vDeducao
+  tag: vDeducao
+  description: Valor dedução para redução da Base de Cálculo
+  elementKind: E
+  parent: U01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U08
+  path: Envio/det/detItem/imposto/ISSQN/vOutro_issqn
+  tag: vOutro_issqn
+  description: Valor outras retenções
+  elementKind: E
+  parent: U01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U09
+  path: Envio/det/detItem/imposto/ISSQN/vDescIncond
+  tag: vDescIncond
+  description: Valor desconto incondicionado
+  elementKind: E
+  parent: U01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U10
+  path: Envio/det/detItem/imposto/ISSQN/vDescCond
+  tag: vDescCond
+  description: Valor desconto condicionado
+  elementKind: E
+  parent: U01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U11
+  path: Envio/det/detItem/imposto/ISSQN/indISSRet
+  tag: indISSRet
+  description: Indicador de ISS Retido
+  elementKind: E
+  parent: U01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U12
+  path: Envio/det/detItem/imposto/ISSQN/vISSRet
+  tag: vISSRet
+  description: Valor de Retenção do ISS
+  elementKind: E
+  parent: U01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U13
+  path: Envio/det/detItem/imposto/ISSQN/indISS
+  tag: indISS
+  description: Indicador da exigibilidade do ISS
+  elementKind: E
+  parent: U01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: U14
+  path: Envio/det/detItem/imposto/ISSQN/cServico
+  tag: cServico
+  description: Código do serviço prestado dentro do município
+  elementKind: E
+  parent: U01
+  type: V (1-20)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U15
+  path: Envio/det/detItem/imposto/ISSQN/cMun_issqn
+  tag: cMun_issqn
+  description: Código do município de incidência do imposto
+  elementKind: E
+  parent: U01
+  type: N (7)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U16
+  path: Envio/det/detItem/imposto/ISSQN/cPais_issqn
+  tag: cPais_issqn
+  description: Código do País onde o serviço foi prestado
+  elementKind: E
+  parent: U01
+  type: N (4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U17
+  path: Envio/det/detItem/imposto/ISSQN/nProcesso
+  tag: nProcesso
+  description: Número do processo judicial ou administrativo de suspensão da exigibilidade
+  elementKind: E
+  parent: U01
+  type: V (1-30)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: U18
+  path: Envio/det/detItem/imposto/ISSQN/indIncentivo
+  tag: indIncentivo
+  description: Indicador de incentivo Fiscal
+  elementKind: E
+  parent: U01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V01
+  path: Envio/det/detItem/imposto/ICMSUFDest
+  tag: ICMSUFDest
+  description: TAG de Grupo de Informação do ICMS de partilha com a UF do destinatário na operação interestadual
+  elementKind: G
+  parent: O01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: V02
+  path: Envio/det/detItem/imposto/ICMSUFDest/vBCUFDest
+  tag: vBCUFDest
+  description: Valor da BC do ICMS na UF do destinatário
+  elementKind: E
+  parent: V01
+  type: N (13.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V03
+  path: Envio/det/detItem/imposto/ICMSUFDest/pFCPUFDest
+  tag: pFCPUFDest
+  description: Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP) na UF de destino
+  elementKind: E
+  parent: V01
+  type: N (3.4)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: V04
+  path: Envio/det/detItem/imposto/ICMSUFDest/pICMSUFDest
+  tag: pICMSUFDest
+  description: Alíquota interna da UF do destinatário
+  elementKind: E
+  parent: V01
+  type: N (3.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V05
+  path: Envio/det/detItem/imposto/ICMSUFDest/pICMSInter
+  tag: pICMSInter
+  description: Alíquota interestadual das UF envolvidas
+  elementKind: E
+  parent: V01
+  type: N (3.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V06
+  path: Envio/det/detItem/imposto/ICMSUFDest/pICMSInterPart
+  tag: pICMSInterPart
+  description: Percentual provisório de partilha entre os Estados
+  elementKind: E
+  parent: V01
+  type: N (3.4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V07
+  path: Envio/det/detItem/imposto/ICMSUFDest/vFCPUFDest
+  tag: vFCPUFDest
+  description: Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) da UF de destino
+  elementKind: E
+  parent: V01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: V08
+  path: Envio/det/detItem/imposto/ICMSUFDest/vICMSUFDest
+  tag: vICMSUFDest
+  description: Valor do ICMS de partilha para a UF do destinatário
+  elementKind: E
+  parent: V01
+  type: N (13.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V09
+  path: Envio/det/detItem/imposto/ICMSUFDest/vICMSUFRemet
+  tag: vICMSUFRemet
+  description: Valor do ICMS de partilha para a UF do remetente
+  elementKind: E
+  parent: V01
+  type: N (13.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: V10
+  path: Envio/det/detItem/imposto/ICMSUFDest/vBCFCPUFDest
+  tag: vBCFCPUFDest
+  description: Valor da Base de Cálculo do FCP na UF de destino
+  elementKind: E
+  parent: V01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: X01
+  path: Envio/det/detItem/impostoDevol
+  tag: impostoDevol
+  description: TAG de Grupo de Informações do Imposto Devolvido
+  elementKind: G
+  parent: G02
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: X02
+  path: Envio/det/detItem/impostoDevol/pDevol
+  tag: pDevol
+  description: Percentual da mercadoria devolvida
+  elementKind: E
+  parent: X01
+  type: N (3.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Xa01
+  path: Envio/det/detItem/impostoDevol/IPIDevol
+  tag: IPIDevol
+  description: TAG de Grupo de Informação do IPI Devolvido
+  elementKind: G
+  parent: X01
+  type: ''
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Xa02
+  path: Envio/det/detItem/impostoDevol/IPIDevol/vIPIDevol
+  tag: vIPIDevol
+  description: Valor do IPI Devolvido
+  elementKind: E
+  parent: Xa01
+  type: N (13.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Xb01
+  path: Envio/det/detItem/impostoDevol/prodObsCont
+  tag: prodObsCont
+  description: TAG de Grupo de observações de uso livre do contribuinte
+  elementKind: G
+  parent: X01
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Xb02
+  path: Envio/det/detItem/impostoDevol/prodObsCont/prodObsContItem
+  tag: prodObsContItem
+  description: Grupo de observações de uso livre (para o item da NF-e)
+  elementKind: G
+  parent: Xb01
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Xb03
+  path: Envio/det/detItem/impostoDevol/prodObsCont/prodObsContItem/xCampoCont
+  tag: xCampoCont
+  description: Identificação do campo
+  elementKind: E
+  parent: Xb02
+  type: C (1-20)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: Xb04
+  path: Envio/det/detItem/impostoDevol/prodObsCont/prodObsContItem/xTextoCont
+  tag: xTextoCont
+  description: Conteúdo do campo
+  elementKind: E
+  parent: Xb02
+  type: C (1-60)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: Xc01
+  path: Envio/det/detItem/impostoDevol/prodObsFisco
+  tag: prodObsFisco
+  description: TAG de Grupo de observações de uso livre do Fisco
+  elementKind: G
+  parent: X01
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Xc02
+  path: Envio/det/detItem/impostoDevol/prodObsFisco/prodObsFiscoItem
+  tag: prodObsFiscoItem
+  description: Grupo de observações de uso livre (para o item da NF-e)
+  elementKind: G
+  parent: Xc01
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Xc03
+  path: Envio/det/detItem/impostoDevol/prodObsFisco/prodObsFiscoItem/xCampoFisco
+  tag: xCampoFisco
+  description: Identificação do campo
+  elementKind: E
+  parent: Xc02
+  type: C (1-20)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: Xc04
+  path: Envio/det/detItem/impostoDevol/prodObsFisco/prodObsFiscoItem/xTextoFisco
+  tag: xTextoFisco
+  description: Conteúdo do campo
+  elementKind: E
+  parent: Xc02
+  type: C (1-60)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: W01
+  path: Envio/total
+  tag: total
+  description: TAG de grupo de Valores Totais da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W02
+  path: Envio/total/ICMStot
+  tag: ICMStot
+  description: TAG de grupo de Valores Totais referentes ao ICMS
+  elementKind: G
+  parent: W01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W03
+  path: Envio/total/ICMStot/vBC_ttlnfe
+  tag: vBC_ttlnfe
+  description: Base de Cálculo do ICMS
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W04
+  path: Envio/total/ICMStot/vICMS_ttlnfe
+  tag: vICMS_ttlnfe
+  description: Valor Total do ICMS
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W05
+  path: Envio/total/ICMStot/vICMSDeson_ttlnfe
+  tag: vICMSDeson_ttlnfe
+  description: Valor Total do ICMS Desonerado
+  elementKind: E
+  parent: W02
+  type: N (13.2)
+  occurrence: 1-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: W06
+  path: Envio/total/ICMStot/vBCST_ttlnfe
+  tag: vBCST_ttlnfe
+  description: Base de Cálculo do ICMS ST
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W07
+  path: Envio/total/ICMStot/vST_ttlnfe
+  tag: vST_ttlnfe
+  description: Valor Total do ICMS ST
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W08
+  path: Envio/total/ICMStot/vProd_ttlnfe
+  tag: vProd_ttlnfe
+  description: Valor Total dos produtos e serviços
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W09
+  path: Envio/total/ICMStot/vFrete_ttlnfe
+  tag: vFrete_ttlnfe
+  description: Valor Total do Frete
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W10
+  path: Envio/total/ICMStot/vSeg_ttlnfe
+  tag: vSeg_ttlnfe
+  description: Valor Total do Seguro
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W11
+  path: Envio/total/ICMStot/vDesc_ttlnfe
+  tag: vDesc_ttlnfe
+  description: Valor Total do Desconto
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W12
+  path: Envio/total/ICMStot/vII_ttlnfe
+  tag: vII_ttlnfe
+  description: Valor Total do II
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W13
+  path: Envio/total/ICMStot/vIPI_ttlnfe
+  tag: vIPI_ttlnfe
+  description: Valor Total do IPI
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W14
+  path: Envio/total/ICMStot/vPIS_ttlnfe
+  tag: vPIS_ttlnfe
+  description: Valor Total do PIS
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W15
+  path: Envio/total/ICMStot/vCOFINS_ttlnfe
+  tag: vCOFINS_ttlnfe
+  description: Valor do COFINS
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W16
+  path: Envio/total/ICMStot/vOutro
+  tag: vOutro
+  description: Outras Despesas acessórias
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: W17
+  path: Envio/total/ICMStot/vNF
+  tag: vNF
+  description: Valor Total da NF-e
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 2.41.3
+  model: 55/65
+- id: W18
+  path: Envio/total/ICMStot/vTotTrib_ttlnfe
+  tag: vTotTrib_ttlnfe
+  description: Valor aproximado total de tributos federais, estaduais e municipais.
+  elementKind: E
+  parent: W02
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: W19
+  path: Envio/total/ICMStot/vFCPUFDest_ttlnfe
+  tag: vFCPUFDest_ttlnfe
+  description: Valor total do ICMS relativo ao Fundo de Combate à Pobreza (FCP) da UF de destino
+  elementKind: E
+  parent: W02
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: W20
+  path: Envio/total/ICMStot/vICMSUFDest_ttlnfe
+  tag: vICMSUFDest_ttlnfe
+  description: Valor total do ICMS de partilha para a UF do destinatário
+  elementKind: E
+  parent: W02
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: W21
+  path: Envio/total/ICMStot/vICMSUFRemet_ttlnfe
+  tag: vICMSUFRemet_ttlnfe
+  description: Valor total do ICMS de partilha para a UF do remetente
+  elementKind: E
+  parent: W02
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: W22
+  path: Envio/total/ICMStot/vFCP_ttlnfe
+  tag: vFCP_ttlnfe
+  description: Valor Total do FCP (Fundo de Combate à Pobreza)
+  elementKind: E
+  parent: W02
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W23
+  path: Envio/total/ICMStot/vFCPST_ttlnfe
+  tag: vFCPST_ttlnfe
+  description: Valor Total do FCP (Fundo de Combate à Pobreza) retido por substituição tributária
+  elementKind: E
+  parent: W02
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W24
+  path: Envio/total/ICMStot/vFCPSTRet_ttlnfe
+  tag: vFCPSTRet_ttlnfe
+  description: Valor Total do FCP (Fundo de Combate à Pobreza) retido anteriormente por substituição tributária
+  elementKind: E
+  parent: W02
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W25
+  path: Envio/total/ICMStot/vIPIDevol_ttlnfe
+  tag: vIPIDevol_ttlnfe
+  description: Valor Total do IPI devolvido
+  elementKind: E
+  parent: W02
+  type: N (16.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W26
+  path: Envio/total/ICMStot/qBCMono_ttlnfe
+  tag: qBCMono_ttlnfe
+  description: Valor total da quantidade tributada do ICMS monofásico próprio
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W27
+  path: Envio/total/ICMStot/vICMSMono_ttlnfe
+  tag: vICMSMono_ttlnfe
+  description: Valor total do ICMS monofásico próprio
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W28
+  path: Envio/total/ICMStot/qBCMonoReten_ttlnfe
+  tag: qBCMonoReten_ttlnfe
+  description: Valor total da quantidade tributada do ICMS monofásico sujeito a retenção
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W29
+  path: Envio/total/ICMStot/vICMSMonoReten_ttlnfe
+  tag: vICMSMonoReten_ttlnfe
+  description: Valor total do ICMS monofásico sujeito a retenção
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W30
+  path: Envio/total/ICMStot/qBCMonoRet_ttlnfe
+  tag: qBCMonoRet_ttlnfe
+  description: Valor total da quantidade tributada do ICMS monofásico retido anteriormente
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: W31
+  path: Envio/total/ICMStot/vICMSMonoRet_ttlnfe
+  tag: vICMSMonoRet_ttlnfe
+  description: Valor total do ICMS monofásico retido anteriormente
+  elementKind: E
+  parent: W02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: '55'
+- id: Wa01
+  path: Envio/total/ISSQNtot
+  tag: ISSQNtot
+  description: TAG de grupo de Valores Totais referentes ao ISSQN
+  elementKind: G
+  parent: W01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa02
+  path: Envio/total/ISSQNtot/vServ
+  tag: vServ
+  description: Valor Total dos Serviços sob não incidência ou não tributados pelo ICMS
+  elementKind: E
+  parent: Wa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa03
+  path: Envio/total/ISSQNtot/vBC_ttlnfe_iss
+  tag: vBC_ttlnfe_iss
+  description: Base de Cálculo do ISS
+  elementKind: E
+  parent: Wa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa04
+  path: Envio/total/ISSQNtot/vISS
+  tag: vISS
+  description: Valor Total do ISS
+  elementKind: E
+  parent: Wa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa05
+  path: Envio/total/ISSQNtot/vPIS_servttlnfe
+  tag: vPIS_servttlnfe
+  description: Valor do PIS sobre serviços
+  elementKind: E
+  parent: Wa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa06
+  path: Envio/total/ISSQNtot/vCOFINS_servttlnfe
+  tag: vCOFINS_servttlnfe
+  description: Valor do COFINS sobre serviços
+  elementKind: E
+  parent: Wa01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa07
+  path: Envio/total/ISSQNtot/dCompet
+  tag: dCompet
+  description: Data da prestação do serviço
+  elementKind: E
+  parent: Wa01
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Wa08
+  path: Envio/total/ISSQNtot/vDeducao_servttlnfe
+  tag: vDeducao_servttlnfe
+  description: Valor dedução para redução da Base de Cálculo
+  elementKind: E
+  parent: Wa01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa09
+  path: Envio/total/ISSQNtot/vOutro_servttlnfe
+  tag: vOutro_servttlnfe
+  description: Valor outras retenções
+  elementKind: E
+  parent: Wa01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa10
+  path: Envio/total/ISSQNtot/vDescIncond_servttlnfe
+  tag: vDescIncond_servttlnfe
+  description: Valor desconto incondicionado
+  elementKind: E
+  parent: Wa01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa11
+  path: Envio/total/ISSQNtot/vDescCond_servttlnfe
+  tag: vDescCond_servttlnfe
+  description: Valor desconto condicionado
+  elementKind: E
+  parent: Wa01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa12
+  path: Envio/total/ISSQNtot/vISSRet_servttlnfe
+  tag: vISSRet_servttlnfe
+  description: Valor total retenção ISS
+  elementKind: E
+  parent: Wa01
+  type: N (13.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wa13
+  path: Envio/total/ISSQNtot/cRegTrib
+  tag: cRegTrib
+  description: Código do Regime Especial de Tributação
+  elementKind: E
+  parent: Wa01
+  type: N (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb01
+  path: Envio/total/retTrib
+  tag: retTrib
+  description: TAG de grupo de Retenções de Tributos
+  elementKind: G
+  parent: W01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb02
+  path: Envio/total/retTrib/vRetPIS
+  tag: vRetPIS
+  description: Valor Retido de PIS
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb03
+  path: Envio/total/retTrib/vRetCOFINS_servttlnfe
+  tag: vRetCOFINS_servttlnfe
+  description: Valor Retido de COFINS
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb04
+  path: Envio/total/retTrib/vRetCSLL
+  tag: vRetCSLL
+  description: Valor Retido de CSLL
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb05
+  path: Envio/total/retTrib/vBCIRRF
+  tag: vBCIRRF
+  description: Base de Cálculo do IRRF
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb06
+  path: Envio/total/retTrib/vIRRF
+  tag: vIRRF
+  description: Valor Retido de IRRF
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb07
+  path: Envio/total/retTrib/vBCRetPrev
+  tag: vBCRetPrev
+  description: Base de Cálculo da Retenção da Previdência Social
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Wb08
+  path: Envio/total/retTrib/vRetPrev
+  tag: vRetPrev
+  description: Valor da Retenção da Previdência Social
+  elementKind: E
+  parent: Wb01
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Y01
+  path: Envio/transp
+  tag: transp
+  description: TAG de grupo de Informações do Transporte da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Y02
+  path: Envio/transp/modFrete
+  tag: modFrete
+  description: Modalidade do frete
+  elementKind: E
+  parent: Y01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: Y03
+  path: Envio/transp/balsa
+  tag: balsa
+  description: Identificação da balsa
+  elementKind: CE
+  parent: Y01
+  type: V (1-20)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Y04
+  path: Envio/transp/vagao
+  tag: vagao
+  description: Identificação do vagão
+  elementKind: CE
+  parent: Y01
+  type: V (1-20)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya01
+  path: Envio/transp/transporta
+  tag: transporta
+  description: TAG de grupo Transportador
+  elementKind: G
+  parent: Y01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya02
+  path: Envio/transp/transporta/CNPJ_transp
+  tag: CNPJ_transp
+  description: CNPJ
+  elementKind: CE
+  parent: Ya01
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya03
+  path: Envio/transp/transporta/CPF_transp
+  tag: CPF_transp
+  description: CPF
+  elementKind: CE
+  parent: Ya01
+  type: V (11)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya04
+  path: Envio/transp/transporta/xNome_transp
+  tag: xNome_transp
+  description: Razão Social ou nome
+  elementKind: E
+  parent: Ya01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya05
+  path: Envio/transp/transporta/IE_transp
+  tag: IE_transp
+  description: Inscrição Estadual
+  elementKind: E
+  parent: Ya01
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya06
+  path: Envio/transp/transporta/xEnder
+  tag: xEnder
+  description: Endereço Completo
+  elementKind: E
+  parent: Ya01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya07
+  path: Envio/transp/transporta/xMun_transp
+  tag: xMun_transp
+  description: Nome do município
+  elementKind: E
+  parent: Ya01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ya08
+  path: Envio/transp/transporta/UF_transp
+  tag: UF_transp
+  description: Sigla da UF
+  elementKind: E
+  parent: Ya01
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb01
+  path: Envio/transp/retTransp
+  tag: retTransp
+  description: TAG de grupo de Retenção do ICMS do transporte
+  elementKind: G
+  parent: Y01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb02
+  path: Envio/transp/retTransp/vServ_transp
+  tag: vServ_transp
+  description: Valor do Serviço
+  elementKind: E
+  parent: Yb01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb03
+  path: Envio/transp/retTransp/vBCRet
+  tag: vBCRet
+  description: BC da Retenção do ICMS
+  elementKind: E
+  parent: Yb01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb04
+  path: Envio/transp/retTransp/pICMSRet
+  tag: pICMSRet
+  description: Alíquota da Retenção
+  elementKind: E
+  parent: Yb01
+  type: N (5.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb05
+  path: Envio/transp/retTransp/vICMSRet
+  tag: vICMSRet
+  description: Valor do ICMS Retido
+  elementKind: E
+  parent: Yb01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb06
+  path: Envio/transp/retTransp/CFOP_transp
+  tag: CFOP_transp
+  description: CFOP
+  elementKind: E
+  parent: Yb01
+  type: N (4)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yb07
+  path: Envio/transp/retTransp/cMunFG_transp
+  tag: cMunFG_transp
+  description: Código do município de ocorrência do fato gerador do ICMS do transporte
+  elementKind: E
+  parent: Yb01
+  type: N (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yc01
+  path: Envio/transp/veicTransp
+  tag: veicTransp
+  description: TAG de grupo Veículo
+  elementKind: GE
+  parent: Y01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Yc02
+  path: Envio/transp/veicTransp/placa
+  tag: placa
+  description: Placa do Veículo
+  elementKind: E
+  parent: Yc01
+  type: V (8)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yc03
+  path: Envio/transp/veicTransp/UF_veictransp
+  tag: UF_veictransp
+  description: Sigla da UF
+  elementKind: E
+  parent: Yc01
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: Yc04
+  path: Envio/transp/veicTransp/RNTC
+  tag: RNTC
+  description: Registro Nacional de Transportador de Carga (ANTT)
+  elementKind: E
+  parent: Yc01
+  type: V (1-20)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Yd01
+  path: Envio/transp/reboque
+  tag: reboque
+  description: TAG de grupo Reboque
+  elementKind: G
+  parent: Y01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Yd02
+  path: Envio/transp/reboque/reboqueItem
+  tag: reboqueItem
+  description: Elemento do grupo de reboque
+  elementKind: G
+  parent: Yd01
+  type: '-'
+  occurrence: 1-2
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yd03
+  path: Envio/transp/reboque/reboqueItem/placa_rebtransp
+  tag: placa_rebtransp
+  description: Placa do Veículo
+  elementKind: E
+  parent: Yd02
+  type: V (8)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Yd04
+  path: Envio/transp/reboque/reboqueItem/UF_rebtransp
+  tag: UF_rebtransp
+  description: Sigla da UF
+  elementKind: E
+  parent: Yd02
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 2.41.3
+  model: 55/65
+- id: Yd05
+  path: Envio/transp/reboque/reboqueItem/RNTC_rebtransp
+  tag: RNTC_rebtransp
+  description: Registro Nacional de Transportador de Carga (ANTT)
+  elementKind: E
+  parent: Yd02
+  type: V (1-20)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye01
+  path: Envio/transp/vol
+  tag: vol
+  description: TAG de grupo Volumes
+  elementKind: G
+  parent: Y01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye02
+  path: Envio/transp/vol/volItem
+  tag: volItem
+  description: Elemento do grupo de volumes da NF-e
+  elementKind: G
+  parent: Ye01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye03
+  path: Envio/transp/vol/volItem/qVol
+  tag: qVol
+  description: Quantidade de volumes transportados
+  elementKind: E
+  parent: Ye02
+  type: N (1-15)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye04
+  path: Envio/transp/vol/volItem/esp
+  tag: esp
+  description: Espécie dos volumes transportados
+  elementKind: E
+  parent: Ye02
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye05
+  path: Envio/transp/vol/volItem/marca
+  tag: marca
+  description: Marca dos volumes transportados
+  elementKind: E
+  parent: Ye02
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye06
+  path: Envio/transp/vol/volItem/nVol
+  tag: nVol
+  description: Numeração dos volumes transportados
+  elementKind: E
+  parent: Ye02
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye07
+  path: Envio/transp/vol/volItem/pesoL_transp
+  tag: pesoL_transp
+  description: Peso Líquido (em kg)
+  elementKind: E
+  parent: Ye02
+  type: N (15.3)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Ye08
+  path: Envio/transp/vol/volItem/pesoB_transp
+  tag: pesoB_transp
+  description: Peso Bruto (em kg)
+  elementKind: E
+  parent: Ye02
+  type: N (15.3)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: Yf01
+  path: Envio/transp/vol/volItem/lacres
+  tag: lacres
+  description: TAG de grupo de Lacres
+  elementKind: G
+  parent: Ye02
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Yf02
+  path: Envio/transp/vol/volItem/lacres/lacresItem
+  tag: lacresItem
+  description: Elemento do grupo de Lacres da NF-e
+  elementKind: G
+  parent: Yf01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Yf03
+  path: Envio/transp/vol/volItem/lacres/lacresItem/nLacre
+  tag: nLacre
+  description: Número dos Lacres
+  elementKind: E
+  parent: Yf02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Z01
+  path: Envio/cobr
+  tag: cobr
+  description: TAG de grupo de Cobrança
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Z02
+  path: Envio/cobr/fat
+  tag: fat
+  description: TAG de grupo da Fatura
+  elementKind: G
+  parent: Z01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Z03
+  path: Envio/cobr/fat/nFat
+  tag: nFat
+  description: Número da Fatura
+  elementKind: E
+  parent: Z02
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Z04
+  path: Envio/cobr/fat/vOrig
+  tag: vOrig
+  description: Valor Original da Fatura
+  elementKind: E
+  parent: Z02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Z05
+  path: Envio/cobr/fat/vDesc_cob
+  tag: vDesc_cob
+  description: Valor do desconto
+  elementKind: E
+  parent: Z02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Z06
+  path: Envio/cobr/fat/vLiq
+  tag: vLiq
+  description: Valor Líquido da Fatura
+  elementKind: E
+  parent: Z02
+  type: N (15.2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Za01
+  path: Envio/cobr/dup
+  tag: dup
+  description: TAG de grupo da Duplicata
+  elementKind: G
+  parent: Z01
+  type: '-'
+  occurrence: 0-N
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: Za02
+  path: Envio/cobr/dup/dupItem
+  tag: dupItem
+  description: Elemento do grupo de Duplicatas da NF-e
+  elementKind: G
+  parent: Za01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Za03
+  path: Envio/cobr/dup/dupItem/nDup
+  tag: nDup
+  description: Número da Duplicata
+  elementKind: E
+  parent: Za02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Za04
+  path: Envio/cobr/dup/dupItem/dVenc
+  tag: dVenc
+  description: Data de vencimento
+  elementKind: E
+  parent: Za02
+  type: D
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: Za05
+  path: Envio/cobr/dup/dupItem/vDup
+  tag: vDup
+  description: Valor da duplicata
+  elementKind: E
+  parent: Za02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AA01
+  path: Envio/pag
+  tag: pag
+  description: TAG de Grupo de Formas de Pagamento
+  elementKind: G
+  parent: A01
+  type: ''
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: AA02
+  path: Envio/pag/pagItem
+  tag: pagItem
+  description: Tag superior do grupo Formas de Pagamento
+  elementKind: G
+  parent: AA01
+  type: ''
+  occurrence: 1-100
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: AA03
+  path: Envio/pag/indPag_pag
+  tag: indPag_pag
+  description: Indicador da Forma de Pagamento
+  elementKind: E
+  parent: AA01
+  type: C (1)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: AA04
+  path: Envio/pag/pagItem/tPag
+  tag: tPag
+  description: Forma de Pagamento
+  elementKind: E
+  parent: AA02
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 2.35.0
+  model: 55/65
+- id: AA05
+  path: Envio/pag/pagItem/xPag
+  tag: xPag
+  description: Descrição do meio de pagamento
+  elementKind: E
+  parent: AA02
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 2.38.0
+  model: 55/65
+- id: AA06
+  path: Envio/pag/pagItem/vPag
+  tag: vPag
+  description: Valor do Pagamento
+  elementKind: E
+  parent: AA02
+  type: N (13.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: 55/65
+- id: AA07
+  path: Envio/pag/pagItem/dPag
+  tag: dPag
+  description: Data do Pagamento
+  elementKind: E
+  parent: AA02
+  type: D
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: AA08
+  path: Envio/pag/pagItem/CNPJPag
+  tag: CNPJPag
+  description: CNPJ transacional do pagamento
+  elementKind: E
+  parent: AA02
+  type: N (14)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: AA09
+  path: Envio/pag/pagItem/UFPag
+  tag: UFPag
+  description: UF do CNPJ do estabelecimento onde o pagamento foi processado/transacionado/recebido
+  elementKind: E
+  parent: AA02
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: AAa01
+  path: Envio/pag/pagItem/card
+  tag: card
+  description: TAG de Grupo de Cartões
+  elementKind: G
+  parent: AA02
+  type: ''
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: AAa02
+  path: Envio/pag/pagItem/card/tipoIntegracao
+  tag: tipoIntegracao
+  description: Tipo de Integração para pagamento
+  elementKind: E
+  parent: AAa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 4.0.0.0
+  model: 55/65
+- id: AAa03
+  path: Envio/pag/pagItem/card/CNPJ_card
+  tag: CNPJ_card
+  description: CNPJ da instituição de pagamento
+  elementKind: E
+  parent: AAa01
+  type: V (14)
+  occurrence: 0-1
+  required: N
+  version: 2.35.0
+  model: 55/65
+- id: AAa04
+  path: Envio/pag/pagItem/card/tBand
+  tag: tBand
+  description: Bandeira da operadora de cartão de crédito e/ou débito
+  elementKind: E
+  parent: AAa01
+  type: C (2)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: AAa05
+  path: Envio/pag/pagItem/card/cAut
+  tag: cAut
+  description: Número de autorização da operação com cartões, PIX, boletos e outros pagamentos eletrônicos
+  elementKind: E
+  parent: AAa01
+  type: V (1-128)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: AAa06
+  path: Envio/pag/pagItem/card/CNPJReceb
+  tag: CNPJReceb
+  description: 'CNPJ do beneficiário do pagamento '
+  elementKind: E
+  parent: AAa01
+  type: C (14)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: AAa07
+  path: Envio/pag/pagItem/card/idTermPag
+  tag: idTermPag
+  description: Identificador do terminal de pagamento
+  elementKind: E
+  parent: AAa01
+  type: C (40)
+  occurrence: 0-1
+  required: N
+  version: 4.0.0.0
+  model: 55/65
+- id: AB01
+  path: Envio/infIntermed
+  tag: infIntermed
+  description: TAG de grupo de identificação do emitente da NF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 2.35.0
+  model: 55/65
+- id: AB02
+  path: Envio/infIntermed/CNPJ_int
+  tag: CNPJ_int
+  description: CNPJ do Intermediador da Transação (agenciador, plataforma de delivery, marketplace e similar) de serviços e de negócios.
+  elementKind: E
+  parent: AB01
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 2.35.0
+  model: 55/65
+- id: AB03
+  path: Envio/infIntermed/idCadIntTran
+  tag: idCadIntTran
+  description: Identificador cadastrado no intermediador
+  elementKind: E
+  parent: AB01
+  type: V (60)
+  occurrence: 1-1
+  required: S
+  version: 2.35.0
+  model: 55/65
+- id: AC01
+  path: Envio/infAdic
+  tag: infAdic
+  description: TAG de grupo de informações adicionais
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AC02
+  path: Envio/infAdic/infAdFisco
+  tag: infAdFisco
+  description: Informações Adicionais de Interesse do Fisco
+  elementKind: E
+  parent: AC01
+  type: V (1-2000)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AC03
+  path: Envio/infAdic/infCpl
+  tag: infCpl
+  description: Informações Complementares de interesse do Contribuinte
+  elementKind: E
+  parent: AC01
+  type: V (1-5000)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: ACa01
+  path: Envio/infAdic/obsCont
+  tag: obsCont
+  description: TAG de grupo do campo de uso livre do contribuinte
+  elementKind: G
+  parent: AC01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: ACa02
+  path: Envio/infAdic/obsCont/obsContItem
+  tag: obsContItem
+  description: Elemento do grupo de uso livro do contribuinte
+  elementKind: G
+  parent: ACa01
+  type: '-'
+  occurrence: 1-10
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: ACa03
+  path: Envio/infAdic/obsCont/obsContItem/xCampo
+  tag: xCampo
+  description: Identificação do campo
+  elementKind: E
+  parent: ACa02
+  type: V (1-20)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: ACa04
+  path: Envio/infAdic/obsCont/obsContItem/xTexto
+  tag: xTexto
+  description: Conteúdo do campo
+  elementKind: E
+  parent: ACa02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: ACb01
+  path: Envio/infAdic/procRef
+  tag: procRef
+  description: TAG de grupo do processo referenciado
+  elementKind: G
+  parent: AC01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: ACb02
+  path: Envio/infAdic/procRef/procRefItem
+  tag: procRefItem
+  description: Elemento do grupo de processos referenciados
+  elementKind: G
+  parent: ACb01
+  type: '-'
+  occurrence: 1-N
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: ACb03
+  path: Envio/infAdic/procRef/procRefItem/nProc
+  tag: nProc
+  description: Identificador do processo ou ato concessório
+  elementKind: E
+  parent: ACb02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: ACb04
+  path: Envio/infAdic/procRef/procRefItem/indProc
+  tag: indProc
+  description: Indicador da origem do processo
+  elementKind: E
+  parent: ACb02
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: ACb05
+  path: Envio/infAdic/procRef/procRefItem/tpAto
+  tag: tpAto
+  description: tipo de ato concessório
+  elementKind: E
+  parent: ACb02
+  type: N(2)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: 55/65
+- id: AE01
+  path: Envio/exporta
+  tag: exporta
+  description: TAG do Grupo de Exportação
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AE02
+  path: Envio/exporta/UFEmbarq
+  tag: UFEmbarq
+  description: Sigla da UF onde ocorrerá o Embarque dos produtos
+  elementKind: E
+  parent: AE01
+  type: C (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AE03
+  path: Envio/exporta/xLocEmbarq
+  tag: xLocEmbarq
+  description: Local onde ocorrerá o Embarque dos produtos
+  elementKind: E
+  parent: AE01
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AE04
+  path: Envio/exporta/xLocDespacho
+  tag: xLocDespacho
+  description: Descrição do local de despacho
+  elementKind: E
+  parent: AE01
+  type: V (60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AF01
+  path: Envio/compra
+  tag: compra
+  description: TAG do Grupo de Compra
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AF02
+  path: Envio/compra/xNEmp
+  tag: xNEmp
+  description: Nota de Empenho
+  elementKind: E
+  parent: AF01
+  type: V (1-22)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AF03
+  path: Envio/compra/xPed
+  tag: xPed
+  description: Pedido
+  elementKind: E
+  parent: AF01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AF04
+  path: Envio/compra/xCont
+  tag: xCont
+  description: Contrato
+  elementKind: E
+  parent: AF01
+  type: V (1-60)
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AG01
+  path: Envio/cana
+  tag: cana
+  description: Grupo de cana
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AG02
+  path: Envio/cana/safra
+  tag: safra
+  description: Identificação da safra
+  elementKind: E
+  parent: AG01
+  type: V (4-9)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG03
+  path: Envio/cana/ref
+  tag: ref
+  description: Mês e ano de referência
+  elementKind: E
+  parent: AG01
+  type: V (7)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG04
+  path: Envio/cana/qTotMes
+  tag: qTotMes
+  description: Quantidade Total do Mês
+  elementKind: E
+  parent: AG01
+  type: N (11.10)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG05
+  path: Envio/cana/qTotAnt
+  tag: qTotAnt
+  description: Quantidade Total Anterior
+  elementKind: E
+  parent: AG01
+  type: N (11.10)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG06
+  path: Envio/cana/qTotGer
+  tag: qTotGer
+  description: Quantidade Total Geral
+  elementKind: E
+  parent: AG01
+  type: N (11.10)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG07
+  path: Envio/cana/vFor
+  tag: vFor
+  description: Valor dos Fornecimentos
+  elementKind: E
+  parent: AG01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG08
+  path: Envio/cana/vTotDed
+  tag: vTotDed
+  description: Valor Total da Dedução
+  elementKind: E
+  parent: AG01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AG09
+  path: Envio/cana/vLiqFor
+  tag: vLiqFor
+  description: Valor Líquido dos Fornecimentos
+  elementKind: E
+  parent: AG01
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGa01
+  path: Envio/cana/canaDiario
+  tag: canaDiario
+  description: Grupo de Fornecimento diário de cana
+  elementKind: G
+  parent: AG01
+  type: '-'
+  occurrence: 1-31
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGa02
+  path: Envio/cana/canaDiario/DiarioItem
+  tag: DiarioItem
+  description: Elemento do grupo de fornecimento de cana
+  elementKind: G
+  parent: AGa01
+  type: '-'
+  occurrence: 1-31
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGa03
+  path: Envio/cana/canaDiario/DiarioItem/dia
+  tag: dia
+  description: Dia
+  elementKind: E
+  parent: AGa02
+  type: N (2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGa04
+  path: Envio/cana/canaDiario/DiarioItem/qtde
+  tag: qtde
+  description: Quantidade
+  elementKind: E
+  parent: AGa02
+  type: N (11.10)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGb01
+  path: Envio/cana/canaDeducoes
+  tag: canaDeducoes
+  description: Grupo de Deduções – Taxas e Contribuições
+  elementKind: G
+  parent: AG01
+  type: '-'
+  occurrence: 0-10
+  required: N
+  version: 1.0.0.0
+  model: '55'
+- id: AGb02
+  path: Envio/cana/canaDeducoes/DeducoesItem
+  tag: DeducoesItem
+  description: Elemento do grupo de deduções de cana
+  elementKind: G
+  parent: AGb01
+  type: '-'
+  occurrence: 0-10
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGb03
+  path: Envio/cana/canaDeducoes/DeducoesItem/xDed
+  tag: xDed
+  description: Descrição da Dedução
+  elementKind: E
+  parent: AGb02
+  type: V (1-60)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AGb04
+  path: Envio/cana/canaDeducoes/DeducoesItem/vDed
+  tag: vDed
+  description: Valor da Dedução
+  elementKind: E
+  parent: AGb02
+  type: N (15.2)
+  occurrence: 1-1
+  required: S
+  version: 1.0.0.0
+  model: '55'
+- id: AH01
+  path: Envio/RespTecnico
+  tag: RespTecnico
+  description: TAG de grupo de Informações do Responsável Técnico pela emissão do DF-e
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: '55'
+- id: AH02
+  path: Envio/RespTecnico/CNPJ
+  tag: CNPJ
+  description: CNPJ da empresa responsável pelo sistema emissor
+  elementKind: E
+  parent: AH01
+  type: V (14)
+  occurrence: 1-1
+  required: S
+  version: 2.13.0
+  model: '55'
+- id: AH03
+  path: Envio/RespTecnico/xContato
+  tag: xContato
+  description: Nome da pessoa responsável sobre o software emissor
+  elementKind: E
+  parent: AH01
+  type: V (60)
+  occurrence: 1-1
+  required: S
+  version: 2.13.0
+  model: '55'
+- id: AH04
+  path: Envio/RespTecnico/email
+  tag: email
+  description: E-mail do responsável
+  elementKind: E
+  parent: AH01
+  type: V (60)
+  occurrence: 1-1
+  required: S
+  version: 2.13.0
+  model: '55'
+- id: AH05
+  path: Envio/RespTecnico/fone
+  tag: fone
+  description: Fone do responsável
+  elementKind: E
+  parent: AH01
+  type: N (12)
+  occurrence: 1-1
+  required: S
+  version: 2.13.0
+  model: '55'
+- id: AH06
+  path: Envio/RespTecnico/idCSRT
+  tag: idCSRT
+  description: Identificador do CSRT usado para geração do hash
+  elementKind: E
+  parent: AH01
+  type: C (3)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: '55'
+- id: AH07
+  path: Envio/RespTecnico/hashCSRT
+  tag: hashCSRT
+  description: Hash do token do código de segurança do responsável técnico
+  elementKind: E
+  parent: AH01
+  type: V (40)
+  occurrence: 0-1
+  required: N
+  version: 2.13.0
+  model: '55'
+- id: AI01
+  path: Envio/agropecuario
+  tag: agropecuario
+  description: Informações de produtos da agricultura, pecuária e produção florestal
+  elementKind: G
+  parent: A01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: ''
+  model: '55'
+- id: AI02
+  path: Envio/agropecuario/defensivo
+  tag: defensivo
+  description: 'Defensivos Agrícolas '
+  elementKind: G
+  parent: AI01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: ''
+  model: 55/65
+- id: AI03
+  path: Envio/agropecuario/defensivo/defensivoItem
+  tag: defensivoItem
+  description: 'Elemento do grupo de Defensivos Agrícolas '
+  elementKind: G
+  parent: AI02
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: ''
+  model: '55'
+- id: AI04
+  path: Envio/agropecuario/defensivo/defensivoItem/nReceituario
+  tag: nReceituario
+  description: Número do receituário
+  elementKind: E
+  parent: AI03
+  type: V (30)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: AI05
+  path: Envio/agropecuario/defensivo/defensivoItem/CPFRespTec
+  tag: CPFRespTec
+  description: CPF do responsável técnico
+  elementKind: E
+  parent: AI03
+  type: N (11)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: AIa01
+  path: Envio/agropecuario/guiaTransito
+  tag: guiaTransito
+  description: Guia de transito
+  elementKind: G
+  parent: AI01
+  type: '-'
+  occurrence: 0-1
+  required: N
+  version: ''
+  model: '55'
+- id: AIa02
+  path: Envio/agropecuario/guiaTransito/tpGuia
+  tag: tpGuia
+  description: Tipo da Guia
+  elementKind: E
+  parent: AIa01
+  type: N (1)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: AIa03
+  path: Envio/agropecuario/guiaTransito/UFGuia
+  tag: UFGuia
+  description: UF da Guia
+  elementKind: E
+  parent: AIa01
+  type: V (2)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'
+- id: AIa04
+  path: Envio/agropecuario/guiaTransito/serieGuia
+  tag: serieGuia
+  description: Série da Guia
+  elementKind: E
+  parent: AIa01
+  type: V (9)
+  occurrence: 0-1
+  required: N
+  version: ''
+  model: '55'
+- id: AIa05
+  path: Envio/agropecuario/guiaTransito/nGuia
+  tag: nGuia
+  description: Número da Guia
+  elementKind: E
+  parent: AIa01
+  type: N (9)
+  occurrence: 1-1
+  required: S
+  version: ''
+  model: '55'

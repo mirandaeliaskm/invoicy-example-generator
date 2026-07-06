@@ -1,12 +1,15 @@
 id: NFE_SIMPLES_NACIONAL
-description: Regras mínimas para emitente do Simples Nacional.
+description: Regras mínimas para emitente do Simples Nacional. No template InvoiCy, CSOSN é renderizado na tag CST do grupo
+  ICMS.
 rules:
-  - id: NFE_SN_001
-    path: document.emitente.crt
-    required: true
-    allowedValues: ["1", "4"]
-    message: Emitente do Simples Nacional deve usar CRT compatível.
-  - id: NFE_SN_002
-    path: document.itens[*].impostos.icms.csosn
-    required: true
-    message: Itens de emitente Simples Nacional devem informar CSOSN.
+- id: NFE_SN_001
+  path: document.emitente.crt
+  required: true
+  allowedValues:
+  - '1'
+  - '4'
+  message: Emitente do Simples Nacional deve usar CRT compatível.
+- id: NFE_SN_002
+  path: document.itens[*].impostos.icms.csosn
+  required: true
+  message: Itens de emitente Simples Nacional devem informar CSOSN.

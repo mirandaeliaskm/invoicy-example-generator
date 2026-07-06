@@ -1,89 +1,106 @@
 document:
   identificador: NFE_COM_ST_IPI
-  layoutVersion: "4.00"
+  modeloDocumento: NFe
+  layoutVersion: '4.00'
   ide:
-    codigoUF: "43"
+    codigoUF: '43'
     naturezaOperacao: Venda com ICMS-ST e IPI
-    modelo: "55"
-    serie: "1"
-    numero: "5001"
-    dataEmissao: "2026-01-15T10:30:00-03:00"
-    tipoOperacao: "1"
-    identificadorDestino: "1"
-    codigoMunicipioFatoGerador: "4310207"
-    tipoAmbiente: "2"
-    finalidade: "1"
-    consumidorFinal: "0"
-    indicadorPresenca: "9"
+    modelo: '55'
+    serie: '1'
+    numero: '5001'
+    dataEmissao: '2026-01-15T10:30:00-03:00'
+    tipoOperacao: '1'
+    identificadorDestino: '1'
+    codigoMunicipioFatoGerador: '4310207'
+    tipoAmbiente: '2'
+    finalidade: '1'
+    consumidorFinal: '0'
+    indicadorPresenca: '9'
+    fusoHorario: -03:00
+    tipoImpressao: '1'
+    tipoEmissao: '1'
   emitente:
-    cnpj: "99999999000191"
+    cnpj: '99999999000191'
     razaoSocial: INDUSTRIA EXEMPLO LTDA
     nomeFantasia: INDUSTRIA EXEMPLO
-    inscricaoEstadual: "2243658792"
-    crt: "3"
+    inscricaoEstadual: '2243658792'
+    crt: '3'
     endereco:
       logradouro: Rua Industrial
-      numero: "100"
+      numero: '100'
       bairro: Distrito Industrial
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700000"
-      codigoPais: "1058"
+      cep: '98700000'
+      codigoPais: '1058'
       pais: Brasil
   destinatario:
-    cnpj: "88888888000172"
+    cnpj: '88888888000172'
     razaoSocial: REVENDA EXEMPLO LTDA
-    indicadorIE: "1"
-    inscricaoEstadual: "2243658793"
+    indicadorIE: '1'
+    inscricaoEstadual: '2243658793'
     endereco:
       logradouro: Avenida Revenda
-      numero: "200"
+      numero: '200'
       bairro: Centro
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700001"
-      codigoPais: "1058"
+      cep: '98700001'
+      codigoPais: '1058'
       pais: Brasil
   itens:
-    - numero: 1
-      produto:
-        codigo: STIPI001
-        ean: SEM GTIN
-        descricao: Produto industrializado com ST e IPI
-        ncm: "85044010"
-        cfop: "5401"
-        unidade: UN
-        quantidade: 1.0000
-        valorUnitario: 1000.00
-        valorProduto: 1000.00
-      impostos:
-        icms:
-          origem: "0"
-          cst: "10"
-          modalidadeBaseCalculo: "3"
-          baseCalculo: 1000.00
-          aliquota: 18.00
-          valor: 180.00
-        icmsSt:
-          modalidadeBaseCalculoST: "4"
-          mvaST: 40.00
-          baseCalculoST: 1400.00
-          aliquotaST: 18.00
-          valorICMSST: 72.00
-        ipi:
-          cst: "50"
-          codigoEnquadramento: "999"
-          baseCalculo: 1000.00
-          aliquota: 5.00
-          valorIpi: 50.00
+  - numero: 1
+    produto:
+      codigo: STIPI001
+      ean: SEM GTIN
+      descricao: Produto industrializado com ST e IPI
+      ncm: '85044010'
+      cfop: '5401'
+      unidade: UN
+      quantidade: 1.0
+      valorUnitario: 1000.0
+      valorProduto: 1000.0
+      tipoItem: '0'
+      indicadorTotal: '1'
+      eanTributavel: SEM GTIN
+      unidadeTributavel: UN
+      quantidadeTributavel: 1.0
+      valorUnitarioTributavel: 1000.0
+    impostos:
+      icms:
+        origem: '0'
+        cst: '10'
+        modalidadeBaseCalculo: '3'
+        baseCalculo: 1000.0
+        aliquota: 18.0
+        valor: 180.0
+      icmsSt:
+        modalidadeBaseCalculoST: '4'
+        mvaST: 40.0
+        baseCalculoST: 1400.0
+        aliquotaST: 18.0
+        valorICMSST: 72.0
+      ipi:
+        cst: '50'
+        codigoEnquadramento: '999'
+        baseCalculo: 1000.0
+        aliquota: 5.0
+        valorIpi: 50.0
   totais:
-    frete: 0.00
-    seguro: 0.00
-    desconto: 0.00
-    outrasDespesas: 0.00
+    frete: 0.0
+    seguro: 0.0
+    desconto: 0.0
+    outrasDespesas: 0.0
+    baseCalculoIcms: 0.0
+    valorIcms: 0.0
+    valorIcmsDesonerado: 0.0
+    baseCalculoST: 0.0
+    valorII: 0.0
+    valorPis: 0.0
+    valorCofins: 0.0
   transporte:
-    modalidadeFrete: "9"
+    modalidadeFrete: '9'
   informacoesAdicionais:
     complementares: Exemplo fictício com ICMS-ST e IPI para homologação técnica.

@@ -1,79 +1,96 @@
 document:
   identificador: NFE_DEVOLUCAO_MERCADORIA
-  layoutVersion: "4.00"
+  modeloDocumento: NFe
+  layoutVersion: '4.00'
   ide:
-    codigoUF: "43"
+    codigoUF: '43'
     naturezaOperacao: Devolução de mercadoria
-    modelo: "55"
-    serie: "1"
-    numero: "3001"
-    dataEmissao: "2026-01-15T10:30:00-03:00"
-    tipoOperacao: "0"
-    identificadorDestino: "1"
-    codigoMunicipioFatoGerador: "4310207"
-    tipoAmbiente: "2"
-    finalidade: "4"
-    consumidorFinal: "0"
-    indicadorPresenca: "9"
+    modelo: '55'
+    serie: '1'
+    numero: '3001'
+    dataEmissao: '2026-01-15T10:30:00-03:00'
+    tipoOperacao: '0'
+    identificadorDestino: '1'
+    codigoMunicipioFatoGerador: '4310207'
+    tipoAmbiente: '2'
+    finalidade: '4'
+    consumidorFinal: '0'
+    indicadorPresenca: '9'
+    fusoHorario: -03:00
+    tipoImpressao: '1'
+    tipoEmissao: '1'
   documentosReferenciados:
-    - chaveNFe: "43260199999999000191550010000025011000025010"
+  - chaveNFe: '43260199999999000191550010000025011000025010'
   emitente:
-    cnpj: "99999999000191"
+    cnpj: '99999999000191'
     razaoSocial: EMPRESA EXEMPLO REGIME NORMAL LTDA
     nomeFantasia: EXEMPLO NORMAL
-    inscricaoEstadual: "2243658792"
-    crt: "3"
+    inscricaoEstadual: '2243658792'
+    crt: '3'
     endereco:
       logradouro: Rua Exemplo
-      numero: "100"
+      numero: '100'
       bairro: Centro
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700000"
-      codigoPais: "1058"
+      cep: '98700000'
+      codigoPais: '1058'
       pais: Brasil
   destinatario:
-    cnpj: "88888888000172"
+    cnpj: '88888888000172'
     razaoSocial: FORNECEDOR EXEMPLO LTDA
-    indicadorIE: "1"
-    inscricaoEstadual: "2243658793"
+    indicadorIE: '1'
+    inscricaoEstadual: '2243658793'
     endereco:
       logradouro: Avenida Fornecedor
-      numero: "500"
+      numero: '500'
       bairro: Industrial
-      codigoMunicipio: "4310207"
+      codigoMunicipio: '4310207'
       municipio: Ijui
       uf: RS
-      cep: "98700001"
-      codigoPais: "1058"
+      cep: '98700001'
+      codigoPais: '1058'
       pais: Brasil
   itens:
-    - numero: 1
-      produto:
-        codigo: DEV001
-        ean: SEM GTIN
-        descricao: Produto devolvido
-        ncm: "85044010"
-        cfop: "1202"
-        unidade: UN
-        quantidade: 1.0000
-        valorUnitario: 250.00
-        valorProduto: 250.00
-      impostos:
-        icms:
-          origem: "0"
-          cst: "00"
-          modalidadeBaseCalculo: "3"
-          baseCalculo: 250.00
-          aliquota: 18.00
-          valor: 45.00
+  - numero: 1
+    produto:
+      codigo: DEV001
+      ean: SEM GTIN
+      descricao: Produto devolvido
+      ncm: '85044010'
+      cfop: '1202'
+      unidade: UN
+      quantidade: 1.0
+      valorUnitario: 250.0
+      valorProduto: 250.0
+      tipoItem: '0'
+      indicadorTotal: '1'
+      eanTributavel: SEM GTIN
+      unidadeTributavel: UN
+      quantidadeTributavel: 1.0
+      valorUnitarioTributavel: 250.0
+    impostos:
+      icms:
+        origem: '0'
+        cst: '00'
+        modalidadeBaseCalculo: '3'
+        baseCalculo: 250.0
+        aliquota: 18.0
+        valor: 45.0
   totais:
-    frete: 0.00
-    seguro: 0.00
-    desconto: 0.00
-    outrasDespesas: 0.00
+    frete: 0.0
+    seguro: 0.0
+    desconto: 0.0
+    outrasDespesas: 0.0
+    baseCalculoIcms: 0.0
+    valorIcms: 0.0
+    valorIcmsDesonerado: 0.0
+    baseCalculoST: 0.0
+    valorII: 0.0
+    valorPis: 0.0
+    valorCofins: 0.0
   transporte:
-    modalidadeFrete: "9"
+    modalidadeFrete: '9'
   informacoesAdicionais:
     complementares: Devolução referente à NF-e indicada no grupo de documentos referenciados.

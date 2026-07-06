@@ -1,174 +1,204 @@
 <#ftl output_format="XML" auto_esc=true>
 <?xml version="1.0" encoding="UTF-8"?>
-<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-  <infNFe versao="${document.layoutVersion}">
-    <ide>
-      <cUF>${document.ide.codigoUF}</cUF>
-      <natOp>${document.ide.naturezaOperacao}</natOp>
-      <mod>${document.ide.modelo}</mod>
-      <serie>${document.ide.serie}</serie>
-      <nNF>${document.ide.numero}</nNF>
-      <dhEmi>${document.ide.dataEmissao}</dhEmi>
-      <tpNF>${document.ide.tipoOperacao}</tpNF>
-      <idDest>${document.ide.identificadorDestino}</idDest>
-      <cMunFG>${document.ide.codigoMunicipioFatoGerador}</cMunFG>
-      <tpAmb>${document.ide.tipoAmbiente}</tpAmb>
-      <finNFe>${document.ide.finalidade}</finNFe>
-      <indFinal>${document.ide.consumidorFinal}</indFinal>
-      <indPres>${document.ide.indicadorPresenca}</indPres>
-    </ide>
+<Envio>
+  <ModeloDocumento>${document.modeloDocumento!"NFe"}</ModeloDocumento>
+  <Versao>${document.layoutVersion}</Versao>
+  <#if document.chaveParceiro??><ChaveParceiro>${document.chaveParceiro}</ChaveParceiro></#if>
+  <#if document.chaveAcesso??><ChaveAcesso>${document.chaveAcesso}</ChaveAcesso></#if>
 
-    <#if document.documentosReferenciados??>
-    <#list document.documentosReferenciados as ref>
-    <NFref>
-      <refNFe>${ref.chaveNFe}</refNFe>
-    </NFref>
-    </#list>
+  <ide>
+    <#if document.ide.codigoNumerico??><cNF>${document.ide.codigoNumerico}</cNF></#if>
+    <cUF>${document.ide.codigoUF}</cUF>
+    <natOp>${document.ide.naturezaOperacao}</natOp>
+    <mod>${document.ide.modelo}</mod>
+    <serie>${document.ide.serie}</serie>
+    <#if document.ide.idUnico??><IDUnico>${document.ide.idUnico}</IDUnico></#if>
+    <nNF>${document.ide.numero}</nNF>
+    <dhEmi>${document.ide.dataEmissao}</dhEmi>
+    <fusoHorario>${document.ide.fusoHorario!"-03:00"}</fusoHorario>
+    <#if document.ide.dataSaidaEntrada??><dhSaiEnt>${document.ide.dataSaidaEntrada}</dhSaiEnt></#if>
+    <tpNf>${document.ide.tipoOperacao}</tpNf>
+    <idDest>${document.ide.identificadorDestino}</idDest>
+    <indFinal>${document.ide.consumidorFinal}</indFinal>
+    <indPres>${document.ide.indicadorPresenca}</indPres>
+    <#if document.ide.indicadorIntermediador??><indIntermed>${document.ide.indicadorIntermediador}</indIntermed></#if>
+    <cMunFg>${document.ide.codigoMunicipioFatoGerador}</cMunFg>
+    <tpImp>${document.ide.tipoImpressao!"1"}</tpImp>
+    <tpEmis>${document.ide.tipoEmissao!"1"}</tpEmis>
+    <tpAmb>${document.ide.tipoAmbiente}</tpAmb>
+    <#if document.ide.justificativaContingencia??><xJust>${document.ide.justificativaContingencia}</xJust></#if>
+    <#if document.ide.dataContingencia??><dhCont>${document.ide.dataContingencia}</dhCont></#if>
+    <finNFe>${document.ide.finalidade}</finNFe>
+    <#if document.ide.emailArquivos??><EmailArquivos>${document.ide.emailArquivos}</EmailArquivos></#if>
+    <#if document.ide.numeroPedido??><NumeroPedido>${document.ide.numeroPedido}</NumeroPedido></#if>
+
+    <#if document.documentosReferenciados?? && document.documentosReferenciados?size gt 0>
+    <NFRef>
+      <#list document.documentosReferenciados as ref>
+      <NFRefItem>
+        <refNFe>${ref.chaveNFe}</refNFe>
+      </NFRefItem>
+      </#list>
+    </NFRef>
     </#if>
+  </ide>
 
-    <emit>
-      <CNPJ>${document.emitente.cnpj}</CNPJ>
-      <xNome>${document.emitente.razaoSocial}</xNome>
-      <xFant>${document.emitente.nomeFantasia!document.emitente.razaoSocial}</xFant>
-      <enderEmit>
-        <xLgr>${document.emitente.endereco.logradouro}</xLgr>
-        <nro>${document.emitente.endereco.numero}</nro>
-        <xBairro>${document.emitente.endereco.bairro}</xBairro>
-        <cMun>${document.emitente.endereco.codigoMunicipio}</cMun>
-        <xMun>${document.emitente.endereco.municipio}</xMun>
-        <UF>${document.emitente.endereco.uf}</UF>
-        <CEP>${document.emitente.endereco.cep}</CEP>
-        <cPais>${document.emitente.endereco.codigoPais}</cPais>
-        <xPais>${document.emitente.endereco.pais}</xPais>
-      </enderEmit>
-      <IE>${document.emitente.inscricaoEstadual}</IE>
-      <CRT>${document.emitente.crt}</CRT>
-    </emit>
+  <emit>
+    <CNPJ_emit>${document.emitente.cnpj}</CNPJ_emit>
+    <xNome>${document.emitente.razaoSocial}</xNome>
+    <#if document.emitente.nomeFantasia??><xFant>${document.emitente.nomeFantasia}</xFant></#if>
+    <#if document.emitente.inscricaoMunicipal??><IM>${document.emitente.inscricaoMunicipal}</IM></#if>
+    <IE>${document.emitente.inscricaoEstadual}</IE>
+    <#if document.emitente.ieSubstitutoTributario??><IEST>${document.emitente.ieSubstitutoTributario}</IEST></#if>
+    <CRT>${document.emitente.crt}</CRT>
+    <enderEmit>
+      <xLgr>${document.emitente.endereco.logradouro}</xLgr>
+      <nro>${document.emitente.endereco.numero}</nro>
+      <#if document.emitente.endereco.complemento??><xCpl>${document.emitente.endereco.complemento}</xCpl></#if>
+      <xBairro>${document.emitente.endereco.bairro}</xBairro>
+      <cMun>${document.emitente.endereco.codigoMunicipio}</cMun>
+      <xMun>${document.emitente.endereco.municipio}</xMun>
+      <UF>${document.emitente.endereco.uf}</UF>
+      <CEP>${document.emitente.endereco.cep}</CEP>
+      <cPais>${document.emitente.endereco.codigoPais}</cPais>
+      <xPais>${document.emitente.endereco.pais}</xPais>
+      <#if document.emitente.endereco.telefone??><fone>${document.emitente.endereco.telefone}</fone></#if>
+      <#if document.emitente.email??><Email>${document.emitente.email}</Email></#if>
+    </enderEmit>
+  </emit>
 
-    <dest>
-      <#if document.destinatario.cnpj??><CNPJ>${document.destinatario.cnpj}</CNPJ></#if>
-      <#if document.destinatario.idEstrangeiro??><idEstrangeiro>${document.destinatario.idEstrangeiro}</idEstrangeiro></#if>
-      <xNome>${document.destinatario.razaoSocial}</xNome>
-      <enderDest>
-        <xLgr>${document.destinatario.endereco.logradouro}</xLgr>
-        <nro>${document.destinatario.endereco.numero}</nro>
-        <xBairro>${document.destinatario.endereco.bairro}</xBairro>
-        <cMun>${document.destinatario.endereco.codigoMunicipio}</cMun>
-        <xMun>${document.destinatario.endereco.municipio}</xMun>
-        <UF>${document.destinatario.endereco.uf}</UF>
-        <CEP>${document.destinatario.endereco.cep}</CEP>
-        <cPais>${document.destinatario.endereco.codigoPais}</cPais>
-        <xPais>${document.destinatario.endereco.pais}</xPais>
-      </enderDest>
-      <indIEDest>${document.destinatario.indicadorIE}</indIEDest>
-      <#if document.destinatario.inscricaoEstadual??><IE>${document.destinatario.inscricaoEstadual}</IE></#if>
-    </dest>
+  <dest>
+    <#if document.destinatario.cnpj??><CNPJ_dest>${document.destinatario.cnpj}</CNPJ_dest></#if>
+    <#if document.destinatario.cpf??><CPF_dest>${document.destinatario.cpf}</CPF_dest></#if>
+    <#if document.destinatario.idEstrangeiro??><idEstrangeiro>${document.destinatario.idEstrangeiro}</idEstrangeiro></#if>
+    <xNome_dest>${document.destinatario.razaoSocial}</xNome_dest>
+    <#if document.destinatario.inscricaoEstadual??><IE_dest>${document.destinatario.inscricaoEstadual}</IE_dest></#if>
+    <indIEDest>${document.destinatario.indicadorIE}</indIEDest>
+    <#if document.destinatario.inscricaoMunicipal??><IM_dest>${document.destinatario.inscricaoMunicipal}</IM_dest></#if>
+    <enderDest>
+      <nro_dest>${document.destinatario.endereco.numero}</nro_dest>
+      <#if document.destinatario.endereco.complemento??><xCpl_dest>${document.destinatario.endereco.complemento}</xCpl_dest></#if>
+      <xBairro_dest>${document.destinatario.endereco.bairro}</xBairro_dest>
+      <#if document.destinatario.email??><xEmail_dest>${document.destinatario.email}</xEmail_dest></#if>
+      <xLgr_dest>${document.destinatario.endereco.logradouro}</xLgr_dest>
+      <xPais_dest>${document.destinatario.endereco.pais}</xPais_dest>
+      <cMun_dest>${document.destinatario.endereco.codigoMunicipio}</cMun_dest>
+      <xMun_dest>${document.destinatario.endereco.municipio}</xMun_dest>
+      <UF_dest>${document.destinatario.endereco.uf}</UF_dest>
+      <CEP_dest>${document.destinatario.endereco.cep}</CEP_dest>
+      <cPais_dest>${document.destinatario.endereco.codigoPais}</cPais_dest>
+      <#if document.destinatario.endereco.telefone??><fone_dest>${document.destinatario.endereco.telefone}</fone_dest></#if>
+    </enderDest>
+  </dest>
 
+  <det>
     <#list document.itens as item>
-    <det nItem="${item.numero}">
+    <detItem>
+      <#if item.informacoesAdicionais??><infADProd>${item.informacoesAdicionais}</infADProd></#if>
       <prod>
         <cProd>${item.produto.codigo}</cProd>
         <cEAN>${item.produto.ean}</cEAN>
         <xProd>${item.produto.descricao}</xProd>
         <NCM>${item.produto.ncm}</NCM>
         <CFOP>${item.produto.cfop}</CFOP>
-        <uCom>${item.produto.unidade}</uCom>
-        <qCom>${item.produto.quantidade}</qCom>
+        <uCOM>${item.produto.unidade}</uCOM>
+        <qCOM>${item.produto.quantidade?string["0.0000"]}</qCOM>
         <vUnCom>${item.produto.valorUnitario?string["0.00"]}</vUnCom>
         <vProd>${item.produto.valorProduto?string["0.00"]}</vProd>
-        <cEANTrib>${item.produto.ean}</cEANTrib>
-        <uTrib>${item.produto.unidade}</uTrib>
-        <qTrib>${item.produto.quantidade}</qTrib>
-        <vUnTrib>${item.produto.valorUnitario?string["0.00"]}</vUnTrib>
-        <indTot>1</indTot>
+        <cEANTrib>${item.produto.eanTributavel!item.produto.ean}</cEANTrib>
+        <uTrib>${item.produto.unidadeTributavel!item.produto.unidade}</uTrib>
+        <qTrib>${(item.produto.quantidadeTributavel!item.produto.quantidade)?string["0.0000"]}</qTrib>
+        <vUnTrib>${(item.produto.valorUnitarioTributavel!item.produto.valorUnitario)?string["0.00"]}</vUnTrib>
+        <#if item.produto.frete??><vFrete>${item.produto.frete?string["0.00"]}</vFrete></#if>
+        <#if item.produto.seguro??><vSeg>${item.produto.seguro?string["0.00"]}</vSeg></#if>
+        <#if item.produto.desconto??><vDesc>${item.produto.desconto?string["0.00"]}</vDesc></#if>
+        <#if item.produto.outrasDespesas??><vOutro_item>${item.produto.outrasDespesas?string["0.00"]}</vOutro_item></#if>
+        <indTot>${item.produto.indicadorTotal!"1"}</indTot>
+        <nTipoItem>${item.produto.tipoItem!"0"}</nTipoItem>
+        <#if item.produto.cest??><CEST>${item.produto.cest}</CEST></#if>
       </prod>
+
       <imposto>
+        <#if item.impostos.valorTotalTributos??><vTotTrib>${item.impostos.valorTotalTributos?string["0.00"]}</vTotTrib></#if>
         <ICMS>
-          <#if item.impostos.icms.csosn??>
-          <ICMSSN102>
-            <orig>${item.impostos.icms.origem}</orig>
-            <CSOSN>${item.impostos.icms.csosn}</CSOSN>
-          </ICMSSN102>
-          <#elseif item.impostos.icmsSt??>
-          <ICMS10>
-            <orig>${item.impostos.icms.origem}</orig>
-            <CST>${item.impostos.icms.cst}</CST>
-            <modBC>${item.impostos.icms.modalidadeBaseCalculo!"3"}</modBC>
-            <vBC>${(item.impostos.icms.baseCalculo!0)?string["0.00"]}</vBC>
-            <pICMS>${(item.impostos.icms.aliquota!0)?string["0.00"]}</pICMS>
-            <vICMS>${(item.impostos.icms.valor!0)?string["0.00"]}</vICMS>
-            <modBCST>${item.impostos.icmsSt.modalidadeBaseCalculoST!"4"}</modBCST>
-            <pMVAST>${(item.impostos.icmsSt.mvaST!0)?string["0.00"]}</pMVAST>
-            <vBCST>${(item.impostos.icmsSt.baseCalculoST!0)?string["0.00"]}</vBCST>
-            <pICMSST>${(item.impostos.icmsSt.aliquotaST!0)?string["0.00"]}</pICMSST>
-            <vICMSST>${(item.impostos.icmsSt.valorICMSST!0)?string["0.00"]}</vICMSST>
-          </ICMS10>
-          <#else>
-          <ICMS00>
-            <orig>${item.impostos.icms.origem}</orig>
-            <CST>${item.impostos.icms.cst}</CST>
-            <modBC>${item.impostos.icms.modalidadeBaseCalculo!"3"}</modBC>
-            <vBC>${(item.impostos.icms.baseCalculo!0)?string["0.00"]}</vBC>
-            <pICMS>${(item.impostos.icms.aliquota!0)?string["0.00"]}</pICMS>
-            <vICMS>${(item.impostos.icms.valor!0)?string["0.00"]}</vICMS>
-          </ICMS00>
+          <orig>${item.impostos.icms.origem}</orig>
+          <CST>${item.impostos.icms.cst!item.impostos.icms.csosn}</CST>
+          <#if item.impostos.icms.modalidadeBaseCalculo??><modBC>${item.impostos.icms.modalidadeBaseCalculo}</modBC></#if>
+          <#if item.impostos.icms.baseCalculo??><vBC>${item.impostos.icms.baseCalculo?string["0.00"]}</vBC></#if>
+          <#if item.impostos.icms.aliquota??><pICMS>${item.impostos.icms.aliquota?string["0.00"]}</pICMS></#if>
+          <#if item.impostos.icms.valor??><vICMS_icms>${item.impostos.icms.valor?string["0.00"]}</vICMS_icms></#if>
+          <#if item.impostos.icmsSt??>
+          <modBCST>${item.impostos.icmsSt.modalidadeBaseCalculoST!"4"}</modBCST>
+          <pMVAST>${(item.impostos.icmsSt.mvaST!0)?string["0.00"]}</pMVAST>
+          <vBCST>${(item.impostos.icmsSt.baseCalculoST!0)?string["0.00"]}</vBCST>
+          <pICMSST>${(item.impostos.icmsSt.aliquotaST!0)?string["0.00"]}</pICMSST>
+          <vICMSST_icms>${(item.impostos.icmsSt.valorICMSST!0)?string["0.00"]}</vICMSST_icms>
           </#if>
         </ICMS>
+
         <#if item.impostos.ipi??>
         <IPI>
           <cEnq>${item.impostos.ipi.codigoEnquadramento!"999"}</cEnq>
-          <IPITrib>
-            <CST>${item.impostos.ipi.cst}</CST>
-            <vBC>${(item.impostos.ipi.baseCalculo!0)?string["0.00"]}</vBC>
-            <pIPI>${(item.impostos.ipi.aliquota!0)?string["0.00"]}</pIPI>
-            <vIPI>${(item.impostos.ipi.valorIpi!0)?string["0.00"]}</vIPI>
-          </IPITrib>
+          <CSTIPI>
+            <CST_IPI>${item.impostos.ipi.cst}</CST_IPI>
+            <#if item.impostos.ipi.baseCalculo??><vBC_IPI>${item.impostos.ipi.baseCalculo?string["0.00"]}</vBC_IPI></#if>
+            <#if item.impostos.ipi.aliquota??><pIPI>${item.impostos.ipi.aliquota?string["0.00"]}</pIPI></#if>
+            <#if item.impostos.ipi.valorIpi??><vIPI>${item.impostos.ipi.valorIpi?string["0.00"]}</vIPI></#if>
+          </CSTIPI>
         </IPI>
         </#if>
+
         <#if item.impostos.pis??>
         <PIS>
-          <PISAliq>
-            <CST>${item.impostos.pis.cst}</CST>
-            <vBC>${(item.impostos.pis.baseCalculo!0)?string["0.00"]}</vBC>
-            <pPIS>${(item.impostos.pis.aliquota!0)?string["0.00"]}</pPIS>
-            <vPIS>${(item.impostos.pis.valor!0)?string["0.00"]}</vPIS>
-          </PISAliq>
+          <CST_pis>${item.impostos.pis.cst}</CST_pis>
+          <vBC_pis>${(item.impostos.pis.baseCalculo!0)?string["0.00"]}</vBC_pis>
+          <pPIS>${(item.impostos.pis.aliquota!0)?string["0.00"]}</pPIS>
+          <vPIS>${(item.impostos.pis.valor!0)?string["0.00"]}</vPIS>
         </PIS>
         </#if>
+
         <#if item.impostos.cofins??>
         <COFINS>
-          <COFINSAliq>
-            <CST>${item.impostos.cofins.cst}</CST>
-            <vBC>${(item.impostos.cofins.baseCalculo!0)?string["0.00"]}</vBC>
-            <pCOFINS>${(item.impostos.cofins.aliquota!0)?string["0.00"]}</pCOFINS>
-            <vCOFINS>${(item.impostos.cofins.valor!0)?string["0.00"]}</vCOFINS>
-          </COFINSAliq>
+          <CST_cofins>${item.impostos.cofins.cst}</CST_cofins>
+          <vBC_cofins>${(item.impostos.cofins.baseCalculo!0)?string["0.00"]}</vBC_cofins>
+          <pCOFINS>${(item.impostos.cofins.aliquota!0)?string["0.00"]}</pCOFINS>
+          <vCOFINS>${(item.impostos.cofins.valor!0)?string["0.00"]}</vCOFINS>
         </COFINS>
         </#if>
       </imposto>
-    </det>
+    </detItem>
     </#list>
+  </det>
 
-    <total>
-      <ICMSTot>
-        <vProd>${document.totais.valorProdutos?string["0.00"]}</vProd>
-        <vFrete>${document.totais.frete?string["0.00"]}</vFrete>
-        <vSeg>${document.totais.seguro?string["0.00"]}</vSeg>
-        <vDesc>${document.totais.desconto?string["0.00"]}</vDesc>
-        <vII>0.00</vII>
-        <vIPI>${document.totais.valorIpi?string["0.00"]}</vIPI>
-        <vST>${document.totais.valorICMSST?string["0.00"]}</vST>
-        <vOutro>${document.totais.outrasDespesas?string["0.00"]}</vOutro>
-        <vNF>${document.totais.valorNota?string["0.00"]}</vNF>
-      </ICMSTot>
-    </total>
+  <total>
+    <ICMStot>
+      <vBC_ttlnfe>${(document.totais.baseCalculoIcms!0)?string["0.00"]}</vBC_ttlnfe>
+      <vICMS_ttlnfe>${(document.totais.valorIcms!0)?string["0.00"]}</vICMS_ttlnfe>
+      <vICMSDeson_ttlnfe>${(document.totais.valorIcmsDesonerado!0)?string["0.00"]}</vICMSDeson_ttlnfe>
+      <vBCST_ttlnfe>${(document.totais.baseCalculoST!0)?string["0.00"]}</vBCST_ttlnfe>
+      <vST_ttlnfe>${document.totais.valorICMSST?string["0.00"]}</vST_ttlnfe>
+      <vProd_ttlnfe>${document.totais.valorProdutos?string["0.00"]}</vProd_ttlnfe>
+      <vFrete_ttlnfe>${document.totais.frete?string["0.00"]}</vFrete_ttlnfe>
+      <vSeg_ttlnfe>${document.totais.seguro?string["0.00"]}</vSeg_ttlnfe>
+      <vDesc_ttlnfe>${document.totais.desconto?string["0.00"]}</vDesc_ttlnfe>
+      <vII_ttlnfe>${(document.totais.valorII!0)?string["0.00"]}</vII_ttlnfe>
+      <vIPI_ttlnfe>${document.totais.valorIpi?string["0.00"]}</vIPI_ttlnfe>
+      <vPIS_ttlnfe>${(document.totais.valorPis!0)?string["0.00"]}</vPIS_ttlnfe>
+      <vCOFINS_ttlnfe>${(document.totais.valorCofins!0)?string["0.00"]}</vCOFINS_ttlnfe>
+      <vOutro>${document.totais.outrasDespesas?string["0.00"]}</vOutro>
+      <vNF>${document.totais.valorNota?string["0.00"]}</vNF>
+      <#if document.totais.valorTotalTributos??><vTotTrib_ttlnfe>${document.totais.valorTotalTributos?string["0.00"]}</vTotTrib_ttlnfe></#if>
+    </ICMStot>
+  </total>
 
-    <transp>
-      <modFrete>${document.transporte.modalidadeFrete}</modFrete>
-    </transp>
+  <transp>
+    <modFrete>${document.transporte.modalidadeFrete}</modFrete>
+  </transp>
 
-    <infAdic>
-      <infCpl>${document.informacoesAdicionais.complementares}</infCpl>
-    </infAdic>
-  </infNFe>
-</NFe>
+  <#if document.informacoesAdicionais??>
+  <infAdic>
+    <#if document.informacoesAdicionais.fisco??><infAdFisco>${document.informacoesAdicionais.fisco}</infAdFisco></#if>
+    <#if document.informacoesAdicionais.complementares??><infCpl>${document.informacoesAdicionais.complementares}</infCpl></#if>
+  </infAdic>
+  </#if>
+</Envio>
