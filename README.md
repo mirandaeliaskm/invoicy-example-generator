@@ -200,3 +200,10 @@ src/main/resources
 ## Aviso técnico
 
 Este projeto entrega um núcleo funcional e extensível para onboarding. Os exemplos são artefatos técnicos para integração com o InvoiCy e não substituem homologação fiscal, análise tributária ou validação final contra ambiente autorizador.
+
+
+## Correção 0.1.1 - Envio InvoiCy / SEFAZ
+
+- Incluído suporte ao grupo `pag/pagItem` do Layout de Envio InvoiCy.
+- Ajustados samples para gerar `tPag` e `vPag`, evitando que o XML nacional seja montado com `<pag/>` vazio.
+- Adicionado `docs/troubleshooting-sefaz.md` com diagnóstico para erro de schema `TISTot`.

@@ -146,6 +146,28 @@
     "transp": {
       "modFrete": "${document.transporte.modalidadeFrete}"
     },
+    "pag": {
+      <#if document.pagamento?? && document.pagamento.indicadorFormaPagamento??>"indPag_pag": "${document.pagamento.indicadorFormaPagamento}",</#if>
+      "pagItem": [
+        <#if document.pagamento?? && document.pagamento.itens?? && document.pagamento.itens?size gt 0>
+        <#list document.pagamento.itens as pagamento>
+        {
+          "tPag": "${pagamento.tipoPagamento!"01"}"<#if pagamento.descricao??>,
+          "xPag": "${pagamento.descricao}"</#if>,
+          "vPag": ${(pagamento.valor!document.totais.valorNota)?string["0.00"]}<#if pagamento.dataPagamento??>,
+          "dPag": "${pagamento.dataPagamento}"</#if><#if pagamento.cnpjPagamento??>,
+          "CNPJPag": "${pagamento.cnpjPagamento}"</#if><#if pagamento.ufPagamento??>,
+          "UFPag": "${pagamento.ufPagamento}"</#if>
+        }<#if pagamento_has_next>,</#if>
+        </#list>
+        <#else>
+        {
+          "tPag": "01",
+          "vPag": ${document.totais.valorNota?string["0.00"]}
+        }
+        </#if>
+      ]
+    },
     "infAdic": {
       "infCpl": "${document.informacoesAdicionais.complementares}"
     }

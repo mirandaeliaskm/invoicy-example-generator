@@ -195,6 +195,27 @@
     <modFrete>${document.transporte.modalidadeFrete}</modFrete>
   </transp>
 
+  <pag>
+    <#if document.pagamento?? && document.pagamento.indicadorFormaPagamento??><indPag_pag>${document.pagamento.indicadorFormaPagamento}</indPag_pag></#if>
+    <#if document.pagamento?? && document.pagamento.itens?? && document.pagamento.itens?size gt 0>
+    <#list document.pagamento.itens as pagamento>
+    <pagItem>
+      <tPag>${pagamento.tipoPagamento!"01"}</tPag>
+      <#if pagamento.descricao??><xPag>${pagamento.descricao}</xPag></#if>
+      <vPag>${(pagamento.valor!document.totais.valorNota)?string["0.00"]}</vPag>
+      <#if pagamento.dataPagamento??><dPag>${pagamento.dataPagamento}</dPag></#if>
+      <#if pagamento.cnpjPagamento??><CNPJPag>${pagamento.cnpjPagamento}</CNPJPag></#if>
+      <#if pagamento.ufPagamento??><UFPag>${pagamento.ufPagamento}</UFPag></#if>
+    </pagItem>
+    </#list>
+    <#else>
+    <pagItem>
+      <tPag>01</tPag>
+      <vPag>${document.totais.valorNota?string["0.00"]}</vPag>
+    </pagItem>
+    </#if>
+  </pag>
+
   <#if document.informacoesAdicionais??>
   <infAdic>
     <#if document.informacoesAdicionais.fisco??><infAdFisco>${document.informacoesAdicionais.fisco}</infAdFisco></#if>

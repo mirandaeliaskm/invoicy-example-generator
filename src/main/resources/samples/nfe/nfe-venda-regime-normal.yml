@@ -100,5 +100,10 @@ document:
     valorCofins: 0.0
   transporte:
     modalidadeFrete: '9'
+  pagamento:
+    indicadorFormaPagamento: '0'
+    itens:
+    - tipoPagamento: '01'
+      valor: 250.0
   informacoesAdicionais:
     complementares: Exemplo fictício de venda por regime normal para homologação.

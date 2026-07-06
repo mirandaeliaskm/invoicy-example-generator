@@ -92,5 +92,10 @@ document:
     valorCofins: 0.0
   transporte:
     modalidadeFrete: '9'
+  pagamento:
+    indicadorFormaPagamento: '0'
+    itens:
+    - tipoPagamento: '01'
+      valor: 250.0
   informacoesAdicionais:
     complementares: Devolução referente à NF-e indicada no grupo de documentos referenciados.

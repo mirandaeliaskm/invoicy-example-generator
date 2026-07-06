@@ -91,3 +91,11 @@ rules:
   - '5'
   - '6'
   message: Layout de Envio InvoiCy exige nTipoItem em cada item.
+- id: NFE_COMMON_014
+  path: document.pagamento.itens[*].tipoPagamento
+  required: true
+  message: Layout de Envio InvoiCy deve gerar grupo pag/pagItem com tPag para evitar envio de <pag/> vazio à SEFAZ.
+- id: NFE_COMMON_015
+  path: document.pagamento.itens[*].valor
+  required: true
+  message: Layout de Envio InvoiCy deve gerar grupo pag/pagItem com vPag para evitar envio de <pag/> vazio à SEFAZ.

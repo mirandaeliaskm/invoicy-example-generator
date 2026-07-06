@@ -89,5 +89,10 @@ document:
     valorCofins: 0.0
   transporte:
     modalidadeFrete: '9'
+  pagamento:
+    indicadorFormaPagamento: '0'
+    itens:
+    - tipoPagamento: '01'
+      valor: 1000.0
   informacoesAdicionais:
     complementares: Exemplo fictício de operação de exportação para onboarding técnico.
